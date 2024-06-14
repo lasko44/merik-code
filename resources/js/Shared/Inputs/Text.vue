@@ -1,0 +1,38 @@
+<script setup>
+import { ref, watch } from 'vue';
+import { defaultFalseBoolProp, optionalStringProp } from '@/Shared/Props/common.js';
+
+const props = defineProps({
+  value: optionalStringProp,
+  label: optionalStringProp,
+  placeholder: optionalStringProp,
+  required: defaultFalseBoolProp,
+  error: defaultFalseBoolProp,
+});
+
+const inputClass = ref('rounded mt-2 p-2 w-full border border-neutral-800 focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2');
+
+watch(() => props.error, (newValue) => {
+  if (newValue) {
+    inputClass.value = 'rounded mt-2 p-2 w-full border border-red-600 focus:outline-none focus:ring-0 focus:border-red-600 focus:border-2';
+  } else {
+    inputClass.value = 'rounded mt-2 p-2 w-full border border-neutral-800 focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2';
+  }
+});
+
+const emit = defineEmits(['update:modelValue']);
+</script>
+
+
+<template>
+  <div>
+    <input
+        @input="$emit('update:modelValue', $event.target.value)"
+        :value="value"
+        :placeholder="placeholder"
+        :class="inputClass"
+        type="text"
+    >
+  </div>
+</template>
+
