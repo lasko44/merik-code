@@ -3,8 +3,7 @@
 import {defaultFalseBoolProp, defaultOptionalArrayProp, optionalStringDefaultProp} from "@/Shared/Props/common.js";
 import {FolderIcon, DocumentIcon, ExclamationCircleIcon} from "@heroicons/vue/24/outline/index.js";
 import {COLORS, ICON_SIZES} from "@/Shared/Typography/utils/classes.js";
-import {BACKGROUND} from "@/Shared/Inputs/utils/classes.js";
-import {onBeforeUnmount, onMounted, ref} from "vue";
+import {ref} from "vue";
 import BreadCrumbs from "@/Shared/Inputs/FileSelector/BreadCrumbs.vue";
 import Spinner from "@/Shared/Indicators/Spinner.vue";
 import {computedBoxSize} from "@/Shared/Utils/computedStylesHelper.js";
@@ -51,7 +50,11 @@ function select(option) {
   updateDirectories()
 }
 
-function updateDirectories(){
+function updateDirectories(data){
+  if (data) {
+    filePath.value = data;
+    console.log(data);
+  }
   axios.get(route('directory.index'), {params: {path: filePath.value}})
       .catch(function (error){
         showError.value = true;
@@ -64,15 +67,6 @@ function updateDirectories(){
       });
 }
 
-onMounted(() => {
-  window.addEventListener('resize', setBoxSize);
-  boxSize.value = getBoxSize();
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', setBoxSize);
-});
-
 const TYPES = {
   dir: "directory",
   file: "file"
@@ -81,12 +75,12 @@ const TYPES = {
 </script>
 
 <template>
-  <div class="border border-neutral-800 rounded" >
-    <div  :class="['text-neutral-100', 'p-1.5', BACKGROUND.BLUE]">
+  <div class="border border-neutral-800 rounded bg-neutral-100" >
+    <div  :class="['text-neutral-100', 'p-1.5', 'bg-cyan-700']">
       Select File <span v-if="required" :class="COLORS.RED">*</span>
     </div>
     <div v-if="filePath.length">
-      <BreadCrumbs :path-array="filePath"/>
+      <BreadCrumbs :path-array="filePath" @update-path="updateDirectories"/>
     </div>
     <div id="parent-box" class="p-2">
       <div id="list-container" v-if="!loading && !showError">

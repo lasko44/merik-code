@@ -10,7 +10,7 @@ class DirectoryController extends Controller
 {
     public function index(): JsonResponse
     {
-        $path = request()->input('path');
+        $path = request()->input('path') ?? [];
 
         $directories = ComponentUtil::getComponentDirectories($path);
 
