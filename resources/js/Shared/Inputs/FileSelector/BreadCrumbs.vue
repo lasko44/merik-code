@@ -23,7 +23,6 @@ const back = () => {
 
 const crumb = (item) => {
   let index = path.value.indexOf(item);
-  console.log(index);
   if (index === -1) {
     emit('update-path', path.value);
   }

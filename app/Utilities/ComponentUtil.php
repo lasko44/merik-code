@@ -36,8 +36,8 @@ class ComponentUtil
 
         $cleaned = [];
         foreach ($directories as $item) {
-            $strippedItem = Str::remove($path, $item);
-            if ($strippedItem !== "Utils/") {
+            if (self::containsVueFiles($item)) {
+                $strippedItem = Str::remove($path, $item);
                 $cleaned[] = [
                     "name" => $strippedItem . "/",
                     "type" => "directory"
@@ -50,11 +50,31 @@ class ComponentUtil
     private static function getFiles(string $path): array
     {
         $files = File::files($path);
-        return array_map(function ($item) {
+        $mappedArray = array_map(function ($item) {
             return [
                 "name" => $item->getBasename(),
                 "type" => "file"
             ];
         }, $files);
+
+        return array_filter($mappedArray, function ($item) {
+            return Str::endsWith($item["name"], ".vue");
+        });
+    }
+
+    private static function containsVueFiles($directory): bool
+    {
+        $files = File::files($directory);
+
+        if(!isset($files)){
+            return false;
+        }
+
+        foreach ($files as $file){
+            if ($file->getExtension() === "vue") {
+                return true;
+            }
+        }
+        return false;
     }
 }
