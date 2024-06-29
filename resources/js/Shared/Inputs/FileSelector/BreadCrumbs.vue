@@ -9,12 +9,13 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['update-path']);
-
+const home = "Home/"
 const path = ref(props.pathArray)
 
 const activeTab = () => {
-  return props.pathArray[props.pathArray.length - 1];
-}
+  const active = props.pathArray[props.pathArray.length - 1];
+  return active ? active : "Home/";
+};
 
 const back = () => {
   path.value.pop()
@@ -22,13 +23,20 @@ const back = () => {
 }
 
 const crumb = (item) => {
-  let index = path.value.indexOf(item);
+  const index = path.value.indexOf(item);
+
   if (index === -1) {
-    emit('update-path', path.value);
+    if (item === home) {
+      emit('update-path', []);
+    } else {
+      emit('update-path', path.value);
+    }
+    return;
   }
-  let newPath = path.value.slice(0, index + 1);
+
+  const newPath = path.value.slice(0, index + 1);
   emit('update-path', newPath);
-}
+};
 
 
 const pathClasses = (item) => {
@@ -58,6 +66,7 @@ watch(() => props.pathArray, activeTab, {deep: true});
       <ArrowLeftIcon class="hover:stroke-2 " aria-label="back-arrow"/>
     </div>
     <div class="ml-3">
+      <span :class="pathClasses(home)" @click="crumb(home)">{{ home }}</span>
       <span :class="pathClasses(item)" @click="crumb(item)" v-for="item in pathArray">{{ item }}</span>
     </div>
   </div>

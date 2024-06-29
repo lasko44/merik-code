@@ -13,7 +13,7 @@ class ComponentUtil
     {
         $directoryPath = self::buildPath($path);
 
-        $directories = self::cleanDirectories(File::directories($directoryPath),$directoryPath);
+        $directories = self::cleanDirectories(File::directories($directoryPath), $directoryPath);
         $files = self::getFiles($directoryPath);
 
         return array_merge($directories, $files);
@@ -22,10 +22,10 @@ class ComponentUtil
     private static function buildPath(array $path): string
     {
         if ($path !== []) {
-           $newPath = ComponentUtil::PATH;
-           foreach ($path as $item){
-               $newPath = $newPath.$item;
-           }
+            $newPath = ComponentUtil::PATH;
+            foreach ($path as $item) {
+                $newPath = $newPath . $item;
+            }
             return $newPath;
         }
         return ComponentUtil::PATH;
@@ -33,8 +33,8 @@ class ComponentUtil
 
     private static function cleanDirectories(array $directories, string $path): array
     {
-
         $cleaned = [];
+
         foreach ($directories as $item) {
             if (self::containsVueFiles($item)) {
                 $strippedItem = Str::remove($path, $item);
@@ -66,11 +66,11 @@ class ComponentUtil
     {
         $files = File::files($directory);
 
-        if(!isset($files)){
+        if (!isset($files)) {
             return false;
         }
 
-        foreach ($files as $file){
+        foreach ($files as $file) {
             if ($file->getExtension() === "vue") {
                 return true;
             }
