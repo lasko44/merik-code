@@ -14,6 +14,14 @@ export const defaultEmptyOptionalArrayProp = {
     default: [],
 }
 
+export const defaultOptionalNumber = ( defaultNumber) => {
+    return {
+        type: Number,
+        required: false,
+        default: defaultNumber
+    }
+}
+
 export const defaultOptionalArrayProp = (defaultArray = []) => {
     return {
         type: Array,

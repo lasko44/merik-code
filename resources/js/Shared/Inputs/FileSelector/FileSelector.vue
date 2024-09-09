@@ -7,6 +7,8 @@ import {ref} from "vue";
 import BreadCrumbs from "@/Shared/Inputs/FileSelector/BreadCrumbs.vue";
 import Spinner from "@/Shared/Indicators/Spinner.vue";
 import {isVueFile} from "@/Shared/Inputs/FileSelector/util/FileSelectorUtil.js";
+import {BACKGROUND} from "@/Shared/Inputs/utils/classes.js";
+import Button from "@/Shared/Inputs/Button.vue";
 
 const props = defineProps({
   label: optionalStringDefaultProp("Select File"),
@@ -20,18 +22,26 @@ const loading = ref(false);
 const boxSize = ref({});
 const showError = ref(false);
 const directories = ref(props.options);
+const selectDisabled = ref(true);
+const selectedFile = ref(null)
+const selectedClass = ref("bg-cyan-700 bg-opacity-20 rounded");
 
 
 function select(option) {
   if (!isVueFile(option.name)) {
+    selectDisabled.value = true;
     filePath.value.push(option.name);
     loading.value = true;
     updateDirectories()
   }
-  //emit vue file string to form
+  else{
+    selectDisabled.value = false;
+    selectedFile.value = option.name
+  }
 }
 
 function updateDirectories(data) {
+  selectDisabled.value = true;
 
   if (data) {
     filePath.value = data;
@@ -62,10 +72,10 @@ const TYPES = {
     </div>
     <BreadCrumbs :path-array="filePath" @update-path="updateDirectories"/>
     <div id="parent-box" class="p-2">
-      <div id="list-container" v-if="!loading && !showError">
+      <div id="list-container" class="my-2" v-if="!loading && !showError">
         <ul>
           <li v-for="(option, index) in directories" :key="index" class="block my-1">
-            <div @click="select(option)" class="flex hover:underline hover:cursor-pointer">
+            <div @click="select(option)" class="flex hover:underline hover:cursor-pointer" :class="{'bg-cyan-700 bg-opacity-20 rounded' : selectedFile === option.name}">
               <div :class="[ICON_SIZES.XS.width, ICON_SIZES.XS.height, 'mt-1', 'mr-1']">
                 <FolderIcon v-if="option.type === TYPES.dir "/>
                 <DocumentIcon v-if="option.type === TYPES.file"/>
