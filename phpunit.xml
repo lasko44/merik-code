@@ -16,7 +16,23 @@
         <include>
             <directory>app</directory>
         </include>
+        <exclude>
+            <directory>app/Http/Middleware</directory>
+            <directory>app/Providers</directory>
+            <file>app/Utilities/PhpUnitHelper.php</file>
+            <file>app/Utilities/ModelSlugger.php</file>
+            <file>app/Exceptions/Handler.php</file>
+            <file>app/Console/Kernel.php</file>
+            <file>Http/Kernel.php</file>
+        </exclude>
     </source>
+    <coverage>
+        <report>
+            <html outputDirectory="build/coverage"/>
+            <text outputFile="build/coverage.txt"/>
+            <clover outputFile="build/logs/clover.xml"/>
+        </report>
+    </coverage>
     <php>
         <env name="APP_ENV" value="testing"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
@@ -30,3 +46,4 @@
         <env name="TELESCOPE_ENABLED" value="false"/>
     </php>
 </phpunit>
+

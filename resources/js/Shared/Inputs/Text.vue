@@ -2,6 +2,7 @@
 import { ref, watch } from 'vue';
 import {defaultFalseBoolProp, optionalStringDefaultProp, optionalStringProp} from '@/Shared/Props/common.js';
 import {COLORS} from "@/Shared/Typography/utils/classes.js";
+import Label from "@/Shared/Inputs/Label.vue";
 
 const props = defineProps({
   value: optionalStringProp,
@@ -28,6 +29,7 @@ const emit = defineEmits(['update:modelValue']);
 
 <template>
   <div>
+    <Label :label="label"/>
     <div>
       <input
           @input="$emit('update:modelValue', $event.target.value)"
