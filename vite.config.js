@@ -21,7 +21,7 @@ export default defineConfig({
         coverage: {
             provider: 'v8',
             reporter: ['text', 'json', 'html'],
-            reportsDirectory: './js/tests/unit/coverage',
+            reportsDirectory: './build/js/coverage',
             exclude:[
                 './vendor/',
                 './build',
@@ -30,7 +30,8 @@ export default defineConfig({
                 'tailwind.config.js',
                 'vite.config.js',
                 'resources/js/app.js',
-                'resources/js/bootstrap.js'
+                'resources/js/bootstrap.js',
+                'jest.config.mjs'
             ]
         },
     },

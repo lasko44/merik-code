@@ -104,7 +104,7 @@ class ComponentUtilTest extends TestCase
     }
     protected function tearDown(): void
     {
-        // Close Mockery
+        // Close Mockery-
         Mockery::close();
         parent::tearDown();
     }
