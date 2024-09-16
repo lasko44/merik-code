@@ -4,7 +4,7 @@ export const actionProp = {
     default: null,
     validator: function (value) {
         const type = value.buttonType.toLowerCase();
-        return (type === 'link' || type === 'locked') && type === 'link' ? value.link !== null : false;
+        return (type === 'link' || type === 'locked') && (type === 'link' ? value.link !== null : true);
     },
 };
 

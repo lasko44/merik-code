@@ -26,12 +26,14 @@ export default defineConfig({
                 './vendor/',
                 './build',
                 './public',
+                'tests',
                 'postcss.config.js',
                 'tailwind.config.js',
                 'vite.config.js',
                 'resources/js/app.js',
                 'resources/js/bootstrap.js',
-                'jest.config.mjs'
+                'jest.config.mjs',
+                'eslint.config.js'
             ]
         },
     },
