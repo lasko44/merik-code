@@ -32,6 +32,7 @@ export default defineConfig({
                 'vite.config.js',
                 'resources/js/app.js',
                 'resources/js/bootstrap.js',
+                'resources/js/Shared/Typography/utils/classes.js',
                 'jest.config.mjs',
                 'eslint.config.js'
             ]
