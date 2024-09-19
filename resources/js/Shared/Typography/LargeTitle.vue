@@ -13,7 +13,5 @@ const classes = LargeTitle(props.theme);
 </script>
 
 <template>
-  <div :class="classes">
-    {{ title }}
-  </div>
+    <h1 :class="[classes, 'h1']">{{ title }}</h1>
 </template>
