@@ -35,6 +35,7 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/js/bootstrap.js',
                 'resources/js/Shared/Typography/utils/classes.js',
+                'resources/js/Shared/Inputs/utils/classes.js',
                 'jest.config.mjs',
                 'eslint.config.js'
             ]

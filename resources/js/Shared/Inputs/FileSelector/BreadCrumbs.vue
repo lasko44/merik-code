@@ -62,12 +62,12 @@ watch(() => props.pathArray, activeTab, {deep: true});
 
 <template>
   <div :class="['flex', COLORS.BLUE, WEIGHT.BOLD, TEXT_SIZES.MD,'bg-neutral-200','p-1']">
-    <div @click="back" :class="[ICON_SIZES.XS.width, ICON_SIZES.XS.height,'mt-1', 'mr-2','hover:cursor-pointer']">
+    <div @click="back" id="bread-back-arrow" :class="[ICON_SIZES.XS.width, ICON_SIZES.XS.height,'mt-1', 'mr-2','hover:cursor-pointer']">
       <ArrowLeftIcon class="hover:stroke-2 " aria-label="back-arrow"/>
     </div>
     <div class="ml-3">
-      <span :class="pathClasses(home)" @click="crumb(home)">{{ home }}</span>
-      <span :class="pathClasses(item)" @click="crumb(item)" v-for="item in pathArray">{{ item }}</span>
+      <span :class="pathClasses(home)" id="home-item" @click="crumb(home)">{{ home }}</span>
+      <span :class="pathClasses(item)" @click="crumb(item)" :id="`crumb-${index}`" v-for="(item, index) in pathArray">{{ item }}</span>
     </div>
   </div>
 
