@@ -7,11 +7,16 @@ import {ref} from "vue";
 import {useForm} from "@inertiajs/vue3";
 import Text from "@/Shared/Inputs/Text.vue";
 import TextArea from "@/Shared/Inputs/TextArea/TextArea.vue";
+import {route} from "ziggy-js";
+import {pathStore} from "@/Pages/ComponentLibrary/Store/index.js";
 
+const store = pathStore();
 const props = defineProps({
   routeAction: requiredStringProp,
   components: defaultOptionalArrayProp([]),
 });
+
+const aiRoute = route('gemini-document.index');
 
 const form = useForm({
   path: null,
@@ -21,6 +26,7 @@ const form = useForm({
 
 function setName(value){
   form.name = value;
+  form.path = store.path;
 }
 
 const formDisabled = ref(true);
@@ -30,7 +36,7 @@ const formDisabled = ref(true);
 <template>
   <FileSelector :options="components" @update:model-value="setName" :required="true"/>
   <Text :required="true" label="Component Name"  class="mt-3" :read-only="true" :value="form.name"/>
-  <TextArea class="mt-3" label="Component Documentation"  :required="true" :enable-ai="true" rows="12"/>
+  <TextArea class="mt-3" label="Component Documentation" :payload="store.path" :required="true" :enable-ai="true" :ai-route="aiRoute" :rows="12"/>
   <div class="flex justify-end">
     <Button class="my-3" :disabled="formDisabled" :text="'Submit'"/>
   </div>

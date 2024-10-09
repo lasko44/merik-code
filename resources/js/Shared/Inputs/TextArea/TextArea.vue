@@ -14,6 +14,7 @@ const props = defineProps({
   value: optionalStringProp,
   label: optionalStringProp,
   enableAi: defaultFalseBoolProp,
+  payload: optionalStringProp,
   aiRoute: optionalStringProp,
   placeholder: optionalStringProp,
   required: defaultFalseBoolProp,
@@ -22,23 +23,31 @@ const props = defineProps({
   rows: defaultOptionalNumber(6)
 });
 
-const inputClass = ref('rounded mt-2 p-2 w-full border border-neutral-800 focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2');
+const inputClass = ref('rounded p-2 w-full border border-neutral-800 focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2');
+const textValue = ref(null);
+const emit = defineEmits(['update'])
 
 watch(() => props.error, (newValue) => {
   if (newValue) {
-    inputClass.value = 'rounded mt-2 p-2 w-full border border-red-600 focus:outline-none focus:ring-0 focus:border-red-600 focus:border-2';
+    inputClass.value = 'rounded p-2 w-full border border-red-600 focus:outline-none focus:ring-0 focus:border-red-600 focus:border-2';
   } else {
-    inputClass.value = 'rounded mt-2 p-2 w-full border border-neutral-800 focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2';
+    inputClass.value = 'rounded p-2 w-full border border-neutral-800 focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2';
   }
 });
+
+function updateText(value) {
+  textValue.value = value
+  emit('update:modelValue', textValue.value);
+}
+
 </script>
 
 <template>
   <div>
     <div>
       <Label :label="label" :required="required"/>
-      <GeminiGenerator v-if="enableAi"/>
-      <textarea :class="inputClass" :rows="rows"></textarea>
+      <GeminiGenerator :payload="payload" @update="updateText()" :route-action="aiRoute" v-if="enableAi"/>
+      <textarea :class="inputClass" v-model="textValue" :value="value" :rows="rows"></textarea>
     </div>
     <div v-if="error">
       <p :class="COLORS.RED">{{errorMessage}}</p>
