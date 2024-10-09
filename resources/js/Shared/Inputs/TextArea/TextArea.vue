@@ -8,9 +8,13 @@ import {
   optionalStringProp
 } from "@/Shared/Props/common.js";
 import {ref, watch} from "vue";
+import Label from "@/Shared/Inputs/Label.vue";
+import GeminiGenerator from "@/Shared/Inputs/TextArea/components/GeminiGenerator.vue";
 const props = defineProps({
   value: optionalStringProp,
   label: optionalStringProp,
+  enableAi: defaultFalseBoolProp,
+  aiRoute: optionalStringProp,
   placeholder: optionalStringProp,
   required: defaultFalseBoolProp,
   error: defaultFalseBoolProp,
@@ -32,7 +36,9 @@ watch(() => props.error, (newValue) => {
 <template>
   <div>
     <div>
-      <textarea></textarea>
+      <Label :label="label" :required="required"/>
+      <GeminiGenerator v-if="enableAi"/>
+      <textarea :class="inputClass" :rows="rows"></textarea>
     </div>
     <div v-if="error">
       <p :class="COLORS.RED">{{errorMessage}}</p>

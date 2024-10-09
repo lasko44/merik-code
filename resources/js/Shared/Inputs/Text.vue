@@ -9,6 +9,7 @@ const props = defineProps({
   label: optionalStringProp,
   placeholder: optionalStringProp,
   required: defaultFalseBoolProp,
+  readOnly: defaultFalseBoolProp,
   error: defaultFalseBoolProp,
   errorMessage: optionalStringDefaultProp("Something is Wrong")
 });
@@ -29,11 +30,12 @@ const emit = defineEmits(['update:modelValue']);
 
 <template>
   <div>
-    <Label :label="label"/>
+    <Label :label="label" :required="required"/>
     <div>
       <input
           @input="$emit('update:modelValue', $event.target.value)"
           :value="value"
+          :readonly="readOnly"
           :placeholder="placeholder"
           :class="inputClass"
           type="text"

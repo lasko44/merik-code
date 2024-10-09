@@ -4,11 +4,14 @@ import {defaultFalseBoolProp, defaultOptionalArrayProp, optionalStringDefaultPro
 import {FolderIcon, DocumentIcon, ExclamationCircleIcon} from "@heroicons/vue/24/outline/index.js";
 import {COLORS, ICON_SIZES} from "@/Shared/Typography/utils/classes.js";
 import {ref} from "vue";
+import axios from 'axios';
 import BreadCrumbs from "@/Shared/Inputs/FileSelector/BreadCrumbs.vue";
 import Spinner from "@/Shared/Indicators/Spinner.vue";
 import {isVueFile} from "@/Shared/Inputs/FileSelector/util/FileSelectorUtil.js";
-import {BACKGROUND} from "@/Shared/Inputs/utils/classes.js";
-import Button from "@/Shared/Inputs/Button.vue";
+import {route} from "ziggy-js";
+import {pathStore} from "@/Pages/ComponentLibrary/Store/index.js";
+
+const store = pathStore();
 
 const props = defineProps({
   label: optionalStringDefaultProp("Select File"),
@@ -16,36 +19,43 @@ const props = defineProps({
   required: defaultFalseBoolProp,
 })
 
-const activeItem = ref(null);
 const filePath = ref([]);
 const loading = ref(false);
-const boxSize = ref({});
 const showError = ref(false);
 const directories = ref(props.options);
 const selectDisabled = ref(true);
 const selectedFile = ref(null)
-const selectedClass = ref("bg-cyan-700 bg-opacity-20 rounded");
-
+const emit = defineEmits(['update:modelValue']);
 
 function select(option) {
   if (!isVueFile(option.name)) {
+    store.updatePath([], null);
     selectDisabled.value = true;
     filePath.value.push(option.name);
     loading.value = true;
     updateDirectories()
+    if(selectedFile.value){
+      emitValue(null);
+    }
   }
   else{
     selectDisabled.value = false;
     selectedFile.value = option.name
+    store.updatePath(filePath.value, selectedFile.value);
+    emitValue(selectedFile.value);
   }
 }
 
-function updateDirectories(data) {
-  selectDisabled.value = true;
+function emitValue(value){
+  emit('update:modelValue', value);
+}
 
+function updateDirectories(data) {
   if (data) {
     filePath.value = data;
   }
+  emitValue(null);
+
   axios.get(route('directory.index'), {params: {path: filePath.value}})
       .catch(function (error) {
         showError.value = true;
@@ -75,7 +85,8 @@ const TYPES = {
       <div id="list-container" class="my-2" v-if="!loading && !showError">
         <ul>
           <li v-for="(option, index) in directories" :key="index" class="block my-1">
-            <div @click="select(option)" class="flex hover:underline hover:cursor-pointer" :class="{'bg-cyan-700 bg-opacity-20 rounded' : selectedFile === option.name}">
+            <div @click="select(option)" class="flex hover:underline hover:cursor-pointer"
+                 :class="{'bg-cyan-700 bg-opacity-20 rounded' : selectedFile === option.name}">
               <div :class="[ICON_SIZES.XS.width, ICON_SIZES.XS.height, 'mt-1', 'mr-1']">
                 <FolderIcon v-if="option.type === TYPES.dir "/>
                 <DocumentIcon v-if="option.type === TYPES.file"/>
@@ -97,7 +108,3 @@ const TYPES = {
     </div>
   </div>
 </template>
-
-<style scoped>
-
-</style>
