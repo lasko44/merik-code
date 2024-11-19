@@ -1,0 +1,12 @@
+
+
+[1;37;40mCode Coverage Report:     [0m
+[1;37;40m  2024-11-19 16:12:24     [0m
+[1;37;40m                          [0m
+[1;37;40m Summary:                 [0m
+[37;41m  Classes:  0.00% (0/16)  [0m
+[37;41m  Methods:  6.35% (4/63)  [0m
+[37;41m  Lines:   27.13% (35/129)[0m
+
+App\Utilities\ComponentUtil
+  [30;43mMethods:  66.67% ( 4/ 6)[0m   [30;42mLines:  94.59% ( 35/ 37)[0m
