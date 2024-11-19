@@ -5,7 +5,8 @@ on:
     branches: [ "**" ]
   pull_request:
     branches: [ "main", "develop" ]
-
+env:
+  LARAVEL_BYPASS_ENV_CHECK: 1
 jobs:
   laravel-tests:
 
@@ -34,7 +35,7 @@ jobs:
         DB_DATABASE: database/database.sqlite
         LARAVEL_BYPASS_ENV_CHECK: 1
       run: php artisan test --coverage
-  build:
+  npm-tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
