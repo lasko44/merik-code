@@ -32,6 +32,7 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
+        LARAVEL_BYPASS_ENV_CHECK: 1
       run: php artisan test --coverage
   build:
     runs-on: ubuntu-latest
@@ -45,7 +46,7 @@ jobs:
           with:
             node-version: ${{ matrix.node-version }}
             cache: "npm"
+        - name: Run npm install
+          run: npm install
         - name: Execute Unit tests
-          run: |
-            npm install
-            npm run check
+          run: npm run check
