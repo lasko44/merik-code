@@ -4,7 +4,7 @@ export const actionProp = {
     default: null,
     validator: function (value) {
         const type = value.buttonType.toLowerCase();
-        return (type === 'link' || type === 'locked') && type === 'link' ? value.link !== null : false;
+        return (type === 'link' || type === 'locked') && (type === 'link' ? value.link !== null : true);
     },
 };
 
@@ -12,6 +12,14 @@ export const defaultEmptyOptionalArrayProp = {
     type: Array,
     required: false,
     default: [],
+}
+
+export const defaultOptionalNumber = ( defaultNumber) => {
+    return {
+        type: Number,
+        required: false,
+        default: defaultNumber
+    }
 }
 
 export const defaultOptionalArrayProp = (defaultArray = []) => {

@@ -34,9 +34,6 @@ export default {
                 cyan: colors.cyan,
             },
             variants: {
-                extend: {
-                    backgroundColor: ['hover','bg-cyan-700'],
-                },
             },
         },
     },
