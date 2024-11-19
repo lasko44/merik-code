@@ -34,7 +34,7 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
         LARAVEL_BYPASS_ENV_CHECK: 1
-      run: php artisan test --coverage
+      run: php artisan test --coverage --min=75
   npm-tests:
     runs-on: ubuntu-latest
     strategy:
