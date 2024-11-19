@@ -24,4 +24,3 @@ export const vOut = {
         delete el._clickOutsideDirectiveCleanup;
     },
 };
-
