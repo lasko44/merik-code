@@ -32,6 +32,7 @@
         "ace-builds": "^1.33.0",
         "jsdom": "^25.0.0",
         "pinia": "^2.2.2",
+        "vite-plugin-mkcert": "^1.17.6",
         "ziggy-js": "^2.3.0"
     }
 }
