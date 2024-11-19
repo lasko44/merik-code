@@ -13,7 +13,7 @@ const btnClass = (theme) => {
     case 'standard':
       return "p-2 text-neutral-100 rounded bg-cyan-700 enabled:hover:bg-cyan-800  disabled:opacity-40"
     case 'lite':
-      return "p-2 text-neutral-800 rounded bg-neutral-100 hover:cursor-pointer border border-neutral-800 hover:bg-neutral-200"
+      return "p-2 text-neutral-800 disabled:cursor-auto disabled:bg-neutral-400 rounded bg-neutral-100 hover:cursor-pointer border border-neutral-800 hover:bg-neutral-200"
     case 'dark':
       return "p-2 text-neutral-300 rounded bg-cyan-700 hover:bg-cyan-800 disabled:bg-cyan-600"
   }

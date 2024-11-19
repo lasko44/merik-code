@@ -25,7 +25,7 @@ const showError = ref(false);
 const directories = ref(props.options);
 const selectDisabled = ref(true);
 const selectedFile = ref(null)
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(["update:modelValue"]);
 
 function select(option) {
   if (!isVueFile(option.name)) {

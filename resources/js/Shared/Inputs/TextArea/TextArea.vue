@@ -10,6 +10,7 @@ import {
 import {ref, watch} from "vue";
 import Label from "@/Shared/Inputs/Label.vue";
 import GeminiGenerator from "@/Shared/Inputs/TextArea/components/GeminiGenerator.vue";
+import Spinner from "@/Shared/Indicators/Spinner.vue";
 const props = defineProps({
   value: optionalStringProp,
   label: optionalStringProp,
@@ -25,7 +26,7 @@ const props = defineProps({
 
 const inputClass = ref('rounded p-2 w-full border border-neutral-800 focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2');
 const textValue = ref(null);
-const emit = defineEmits(['update'])
+const emit = defineEmits(['update:modelValue'])
 
 watch(() => props.error, (newValue) => {
   if (newValue) {
@@ -36,7 +37,7 @@ watch(() => props.error, (newValue) => {
 });
 
 function updateText(value) {
-  textValue.value = value
+  textValue.value = value;
   emit('update:modelValue', textValue.value);
 }
 
@@ -46,8 +47,9 @@ function updateText(value) {
   <div>
     <div>
       <Label :label="label" :required="required"/>
-      <GeminiGenerator :payload="payload" @update="updateText()" :route-action="aiRoute" v-if="enableAi"/>
-      <textarea :class="inputClass" v-model="textValue" :value="value" :rows="rows"></textarea>
+      <GeminiGenerator :payload="payload" @update="updateText" :route-action="aiRoute" v-if="enableAi"/>
+      <textarea :class="inputClass"  :value="textValue" :rows="rows"/>
+      <Spinner class="relative left-[300px] bottom-[250px]"/>
     </div>
     <div v-if="error">
       <p :class="COLORS.RED">{{errorMessage}}</p>

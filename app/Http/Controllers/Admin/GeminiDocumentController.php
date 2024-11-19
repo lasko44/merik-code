@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Utilities\GemeniAPICaller;
+use App\Utilities\ComponentUtil;
+use App\Utilities\GeminiAPICaller;
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Request;
@@ -14,16 +15,15 @@ class GeminiDocumentController extends Controller
 {
     private const PROMPT = "Please document this Vue 3 code: \n";
     /**
-     * @throws ContainerExceptionInterface
-     * @throws NotFoundExceptionInterface
      */
-    public function index(GemeniAPICaller $caller)
+    public function index(GeminiAPICaller $caller)
     {
-        $payload = request()->get('payload');
+        $payload = request()->query('payload');
          try {
-             $gemeniResponse = $caller->call(self::PROMPT, $payload);
+             $fileContents = ComponentUtil::getComponentContents($payload);
+             $geminiResponse = $caller->call(self::PROMPT, $fileContents);
 
-             return response()->json($gemeniResponse);
+             return response()->json($geminiResponse);
          }
          catch (Exception|GuzzleException $exception){
 

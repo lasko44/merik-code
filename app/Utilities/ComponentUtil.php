@@ -19,10 +19,10 @@ class ComponentUtil
         return array_merge($directories, $files);
     }
 
-    public static function getComponentContents(array $path): string
+    public static function getComponentContents(string $path): string
     {
-        $builtPath = self::buildPath($path);
-        return File::get(self::PATH.$builtPath);
+
+        return File::get(self::PATH.$path);
     }
 
     private static function buildPath(array $path): string
