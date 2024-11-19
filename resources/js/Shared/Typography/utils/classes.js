@@ -34,10 +34,10 @@ export const TEXT_SIZES = {
 
 export const LargeTitle = ( key ) => {
     const colors = {
-        black: [TEXT_SIZES.XL, WEIGHT.BOLD, COLORS.BLACK],
-        blue: [TEXT_SIZES.XL, WEIGHT.BOLD, COLORS.BLUE],
-        red: [TEXT_SIZES.XL, WEIGHT.BOLD, COLORS.RED],
-        green: [TEXT_SIZES.XL, WEIGHT.BOLD, COLORS.GREEN],
+        black: [TEXT_SIZES.LG, WEIGHT.BOLD, COLORS.BLACK],
+        blue: [TEXT_SIZES.LG, WEIGHT.BOLD, COLORS.BLUE],
+        red: [TEXT_SIZES.LG, WEIGHT.BOLD, COLORS.RED],
+        green: [TEXT_SIZES.LG, WEIGHT.BOLD, COLORS.GREEN],
     };
 
     return getObjectValueByKey(key, colors);
