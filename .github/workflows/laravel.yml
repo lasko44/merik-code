@@ -35,4 +35,3 @@ jobs:
       run: php artisan test --coverage
     - name: Run npm install
       run: npm install
-    - name: npm run check
