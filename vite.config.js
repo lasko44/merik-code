@@ -24,6 +24,9 @@ export default defineConfig({
             provider: 'v8',
             reporter: ['text', 'json', 'html'],
             reportsDirectory: './build/js/coverage',
+            lines: 75,
+            functions: 75,
+            statements: 75,
             exclude:[
                 './vendor/',
                 './build',
