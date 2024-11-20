@@ -25,3 +25,9 @@ Route::prefix('admin')->group(function (){
     Route::resource('directory', DirectoryController::class);
     Route::get('/gemini-document',[GeminiDocumentController::class, 'index'])->name('gemini-document.index');
 });
+
+Route::domain('m-code')->group(function () {
+    Route::get('/', function () {
+        dd('hit');
+    });
+});
