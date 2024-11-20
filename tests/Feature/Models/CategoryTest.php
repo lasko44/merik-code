@@ -11,7 +11,7 @@ use Tests\TestCase;
 class CategoryTest extends TestCase
 {
     use RefreshDatabase;
-    
+
     public function test_exercise_relationship()
     {
         // Create a category
