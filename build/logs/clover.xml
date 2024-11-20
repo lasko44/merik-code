@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1732125504">
-  <project timestamp="1732125504">
+<coverage generated="1732129687">
+  <project timestamp="1732129687">
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Http/Controllers/Admin/CategoryController.php">
       <class name="App\Http\Controllers\Admin\CategoryController" namespace="global">
         <metrics complexity="7" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="14" coveredelements="0"/>
@@ -185,16 +185,16 @@
     </file>
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Models/Category.php">
       <class name="App\Models\Category" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="7" coveredelements="0"/>
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
       </class>
-      <line num="19" type="method" name="name" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="21" type="stmt" count="0"/>
-      <line num="22" type="stmt" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="31" type="method" name="exercise" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="33" type="stmt" count="0"/>
-      <metrics loc="38" ncloc="34" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="7" coveredelements="0"/>
+      <line num="19" type="method" name="name" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="21" type="stmt" count="4"/>
+      <line num="22" type="stmt" count="4"/>
+      <line num="23" type="stmt" count="4"/>
+      <line num="24" type="stmt" count="4"/>
+      <line num="31" type="method" name="exercise" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="33" type="stmt" count="1"/>
+      <metrics loc="38" ncloc="34" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
     </file>
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Models/Component.php">
       <class name="App\Models\Component" namespace="global">
@@ -214,46 +214,26 @@
     </file>
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Models/Exercise.php">
       <class name="App\Models\Exercise" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </class>
-      <line num="17" type="method" name="category" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="19" type="stmt" count="0"/>
-      <line num="22" type="method" name="language" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <metrics loc="29" ncloc="27" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+      <line num="17" type="method" name="category" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="19" type="stmt" count="1"/>
+      <line num="22" type="method" name="language" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <metrics loc="29" ncloc="27" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
     </file>
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Models/Language.php">
       <class name="App\Models\Language" namespace="global">
-        <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="7" coveredelements="0"/>
+        <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
       </class>
-      <line num="19" type="method" name="name" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="21" type="stmt" count="0"/>
-      <line num="22" type="stmt" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="31" type="method" name="exercise" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="33" type="stmt" count="0"/>
-      <metrics loc="38" ncloc="34" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="7" coveredelements="0"/>
-    </file>
-    <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Models/Membership.php">
-      <class name="App\Models\Membership" namespace="global">
-        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
-      </class>
-      <metrics loc="16" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
-    </file>
-    <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Models/Team.php">
-      <class name="App\Models\Team" namespace="global">
-        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
-      </class>
-      <metrics loc="45" ncloc="30" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
-    </file>
-    <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Models/TeamInvitation.php">
-      <class name="App\Models\TeamInvitation" namespace="global">
-        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
-      </class>
-      <line num="24" type="method" name="team" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <metrics loc="29" ncloc="21" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      <line num="18" type="method" name="name" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="20" type="stmt" count="5"/>
+      <line num="21" type="stmt" count="5"/>
+      <line num="22" type="stmt" count="5"/>
+      <line num="23" type="stmt" count="5"/>
+      <line num="30" type="method" name="exercise" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="32" type="stmt" count="1"/>
+      <metrics loc="37" ncloc="33" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
     </file>
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Models/User.php">
       <class name="App\Models\User" namespace="global">
@@ -268,28 +248,6 @@
         <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </class>
       <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
-    </file>
-    <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Policies/TeamPolicy.php">
-      <class name="App\Policies\TeamPolicy" namespace="global">
-        <metrics complexity="8" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="16" coveredelements="0"/>
-      </class>
-      <line num="16" type="method" name="viewAny" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="18" type="stmt" count="0"/>
-      <line num="24" type="method" name="view" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <line num="32" type="method" name="create" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="34" type="stmt" count="0"/>
-      <line num="40" type="method" name="update" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="42" type="stmt" count="0"/>
-      <line num="48" type="method" name="addTeamMember" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="50" type="stmt" count="0"/>
-      <line num="56" type="method" name="updateTeamMember" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="58" type="stmt" count="0"/>
-      <line num="64" type="method" name="removeTeamMember" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="66" type="stmt" count="0"/>
-      <line num="72" type="method" name="delete" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="74" type="stmt" count="0"/>
-      <metrics loc="77" ncloc="53" classes="1" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="16" coveredelements="0"/>
     </file>
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Utilities/ComponentUtil.php">
       <class name="App\Utilities\ComponentUtil" namespace="global">
@@ -361,6 +319,6 @@
       <line num="35" type="stmt" count="1"/>
       <metrics loc="38" ncloc="38" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="15" coveredelements="15"/>
     </file>
-    <metrics files="24" loc="1121" ncloc="839" classes="19" methods="77" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="139" coveredstatements="49" elements="216" coveredelements="56"/>
+    <metrics files="20" loc="953" ncloc="723" classes="17" methods="68" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="130" coveredstatements="61" elements="198" coveredelements="74"/>
   </project>
 </coverage>

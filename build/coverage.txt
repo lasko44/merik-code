@@ -1,13 +1,19 @@
 
 
 [1;37;40mCode Coverage Report:     [0m
-[1;37;40m  2024-11-20 17:58:24     [0m
+[1;37;40m  2024-11-20 19:08:07     [0m
 [1;37;40m                          [0m
 [1;37;40m Summary:                 [0m
-[37;41m  Classes: 10.53% (2/19)  [0m
-[37;41m  Methods:  9.09% (7/77)  [0m
-[37;41m  Lines:   35.25% (49/139)[0m
+[37;41m  Classes: 29.41% (5/17)  [0m
+[37;41m  Methods: 19.12% (13/68) [0m
+[37;41m  Lines:   46.92% (61/130)[0m
 
+App\Models\Category
+  [30;42mMethods: 100.00% ( 2/ 2)[0m   [30;42mLines: 100.00% (  5/  5)[0m
+App\Models\Exercise
+  [30;42mMethods: 100.00% ( 2/ 2)[0m   [30;42mLines: 100.00% (  2/  2)[0m
+App\Models\Language
+  [30;42mMethods: 100.00% ( 2/ 2)[0m   [30;42mLines: 100.00% (  5/  5)[0m
 App\Models\User
   [30;42mMethods: 100.00% ( 1/ 1)[0m   [30;42mLines: 100.00% (  1/  1)[0m
 App\Utilities\ComponentUtil
