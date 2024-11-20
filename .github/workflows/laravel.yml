@@ -31,7 +31,7 @@ jobs:
         touch database/database.sqlite
     - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
       env:
-        DB_CONNECTION: testing
+        DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
         LARAVEL_BYPASS_ENV_CHECK: 1
       run: php artisan test --coverage --min=75
