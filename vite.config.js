@@ -1,9 +1,15 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
+import mkcert from'vite-plugin-mkcert'
 
 export default defineConfig({
+    server: {
+        https: true,
+        host: 'vite.merik-code.test'
+    },
     plugins: [
+        mkcert(),
         laravel({
             input: 'resources/js/app.js',
             refresh: true,
@@ -17,6 +23,7 @@ export default defineConfig({
             },
         }),
     ],
+
     test: {
         globals: true,
         environment: "jsdom",
