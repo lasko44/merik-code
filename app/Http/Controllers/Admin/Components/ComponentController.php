@@ -18,7 +18,7 @@ class ComponentController extends Controller
      */
     public function index(): Response
     {
-        $components = Component::with('componentProps')->orderBy('name')->get();
+        $components = Component::query()->orderBy('name')->get();
 
         return Inertia::render('ComponentLibrary/Index', [
             'exercise' => Exercise::with(['category','language'])->first(),

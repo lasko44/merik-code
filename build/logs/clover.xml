@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1732194687">
-  <project timestamp="1732194687">
+<coverage generated="1732199903">
+  <project timestamp="1732199903">
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Http/Controllers/Admin/CategoryController.php">
       <class name="App\Http\Controllers\Admin\CategoryController" namespace="global">
         <metrics complexity="7" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -9,19 +9,19 @@
     </file>
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Http/Controllers/Admin/Components/ComponentController.php">
       <class name="App\Http\Controllers\Admin\Components\ComponentController" namespace="global">
-        <metrics complexity="7" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="10" coveredelements="0"/>
+        <metrics complexity="7" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="10" coveredelements="10"/>
       </class>
-      <line num="19" type="method" name="index" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="21" type="stmt" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="25" type="stmt" count="0"/>
-      <line num="31" type="method" name="create" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="33" type="stmt" count="0"/>
-      <line num="35" type="stmt" count="0"/>
-      <line num="36" type="stmt" count="0"/>
-      <line num="37" type="stmt" count="0"/>
-      <metrics loc="85" ncloc="54" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="10" coveredelements="0"/>
+      <line num="19" type="method" name="index" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="21" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="31" type="method" name="create" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="33" type="stmt" count="1"/>
+      <line num="35" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <metrics loc="85" ncloc="54" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="8" elements="10" coveredelements="10"/>
     </file>
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Http/Controllers/Admin/Components/ComponentPropsController.php">
       <class name="App\Http\Controllers\Admin\Components\ComponentPropsController" namespace="global">
@@ -215,8 +215,8 @@
       <class name="App\Utilities\ComponentUtil\ComponentUtilFacade" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </class>
-      <line num="14" type="method" name="getFacadeAccessor" visibility="protected" complexity="1" crap="1" count="2"/>
-      <line num="16" type="stmt" count="2"/>
+      <line num="14" type="method" name="getFacadeAccessor" visibility="protected" complexity="1" crap="1" count="3"/>
+      <line num="16" type="stmt" count="3"/>
       <metrics loc="18" ncloc="14" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
     </file>
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Utilities/GeminiAPICaller.php">
@@ -240,6 +240,6 @@
       <line num="35" type="stmt" count="1"/>
       <metrics loc="38" ncloc="38" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="15" coveredelements="15"/>
     </file>
-    <metrics files="20" loc="984" ncloc="711" classes="12" methods="28" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="91" coveredstatements="64" elements="119" coveredelements="78"/>
+    <metrics files="20" loc="984" ncloc="711" classes="12" methods="28" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="91" coveredstatements="72" elements="119" coveredelements="88"/>
   </project>
 </coverage>
