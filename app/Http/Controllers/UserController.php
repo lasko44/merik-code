@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+/**
+ * @codeCoverageIgnore 
+ */
 class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function index()
     {
@@ -16,6 +20,7 @@ class UserController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function create()
     {
@@ -24,6 +29,7 @@ class UserController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function store(Request $request)
     {
@@ -32,6 +38,7 @@ class UserController extends Controller
 
     /**
      * Display the specified resource.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function show(string $id)
     {
@@ -40,6 +47,7 @@ class UserController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function edit(string $id)
     {
@@ -48,6 +56,7 @@ class UserController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function update(Request $request, string $id)
     {

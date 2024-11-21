@@ -11,6 +11,7 @@ class ExerciseController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function index()
     {
@@ -19,6 +20,7 @@ class ExerciseController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function create()
     {
@@ -27,6 +29,7 @@ class ExerciseController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * @codeCoverageIgnore  //TODO Remove when used
      */
     public function store(Request $request)
     {
@@ -34,7 +37,7 @@ class ExerciseController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resources
      */
     public function show(Exercise $exercise)
     {
@@ -45,6 +48,7 @@ class ExerciseController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function edit(Exercise $exercise)
     {
@@ -53,6 +57,7 @@ class ExerciseController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function update(Request $request, Exercise $exercise)
     {
@@ -61,6 +66,7 @@ class ExerciseController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function destroy(Exercise $exercise)
     {
