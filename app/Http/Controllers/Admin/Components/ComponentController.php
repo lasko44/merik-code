@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin\Components;
 use App\Http\Controllers\Controller;
 use App\Models\Component;
 use App\Models\Exercise;
-use App\Utilities\ComponentUtil;
+
+use App\Utilities\ComponentUtil\ComponentUtilFacade;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -29,7 +30,7 @@ class ComponentController extends Controller
      */
     public function create(): Response
     {
-        $componentDirectories = ComponentUtil::getComponentDirectories();
+        $componentDirectories = ComponentUtilFacade::getComponentDirectories();
 
         return Inertia::render('ComponentLibrary/Create', [
             'componentDirectories' => $componentDirectories

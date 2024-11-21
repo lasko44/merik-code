@@ -184,8 +184,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        'Http' => Illuminate\Support\Facades\Http::class,
-        'Config' => Illuminate\Support\Facades\Config::class
+        'ComponentUtil' => \App\Utilities\ComponentUtil\ComponentUtilFacade::class,
     ])->toArray(),
 
 ];

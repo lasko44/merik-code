@@ -1,13 +1,15 @@
 
 
 [1;37;40mCode Coverage Report:     [0m
-[1;37;40m  2024-11-20 19:23:43     [0m
+[1;37;40m  2024-11-21 03:24:35     [0m
 [1;37;40m                          [0m
 [1;37;40m Summary:                 [0m
-[37;41m  Classes: 29.41% (5/17)  [0m
-[37;41m  Methods: 19.12% (13/68) [0m
-[37;41m  Lines:   46.92% (61/130)[0m
+[37;41m  Classes: 38.89% (7/18)  [0m
+[37;41m  Methods: 20.29% (14/69) [0m
+[37;41m  Lines:   48.48% (64/132)[0m
 
+App\Http\Controllers\Admin\GeminiDocumentController
+  [30;42mMethods: 100.00% ( 1/ 1)[0m   [30;42mLines: 100.00% (  6/  6)[0m
 App\Models\Category
   [30;42mMethods: 100.00% ( 2/ 2)[0m   [30;42mLines: 100.00% (  5/  5)[0m
 App\Models\Exercise
@@ -16,7 +18,9 @@ App\Models\Language
   [30;42mMethods: 100.00% ( 2/ 2)[0m   [30;42mLines: 100.00% (  5/  5)[0m
 App\Models\User
   [30;42mMethods: 100.00% ( 1/ 1)[0m   [30;42mLines: 100.00% (  1/  1)[0m
-App\Utilities\ComponentUtil
-  [30;43mMethods:  66.67% ( 4/ 6)[0m   [30;42mLines:  94.59% ( 35/ 37)[0m
+App\Utilities\ComponentUtil\ComponentUtil
+  [37;41mMethods:  50.00% ( 3/ 6)[0m   [30;43mLines:  83.78% ( 31/ 37)[0m
+App\Utilities\ComponentUtil\ComponentUtilFacade
+  [30;42mMethods: 100.00% ( 1/ 1)[0m   [30;42mLines: 100.00% (  1/  1)[0m
 App\Utilities\GeminiAPICaller
   [30;42mMethods: 100.00% ( 2/ 2)[0m   [30;42mLines: 100.00% ( 13/ 13)[0m
