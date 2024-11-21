@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 /**
- * @codeCoverageIgnore 
+ * @codeCoverageIgnore
  */
 class UserController extends Controller
 {
