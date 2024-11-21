@@ -9,6 +9,7 @@ class UserTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *  @codeCoverageIgnore  //TODO Remove when used
      */
     public function index()
     {
@@ -17,6 +18,7 @@ class UserTypeController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     *  @codeCoverageIgnore  //TODO Remove when used
      */
     public function create()
     {
@@ -25,6 +27,7 @@ class UserTypeController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     *  @codeCoverageIgnore  //TODO Remove when used
      */
     public function store(Request $request)
     {
@@ -33,6 +36,7 @@ class UserTypeController extends Controller
 
     /**
      * Display the specified resource.
+     *  @codeCoverageIgnore  //TODO Remove when used
      */
     public function show(UserType $userType)
     {
@@ -41,6 +45,7 @@ class UserTypeController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     *  @codeCoverageIgnore  //TODO Remove when used
      */
     public function edit(UserType $userType)
     {
@@ -49,6 +54,7 @@ class UserTypeController extends Controller
 
     /**
      * Update the specified resource in storage.
+     *  @codeCoverageIgnore  //TODO Remove when used
      */
     public function update(Request $request, UserType $userType)
     {
@@ -57,6 +63,7 @@ class UserTypeController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     *  @codeCoverageIgnore  //TODO Remove when used
      */
     public function destroy(UserType $userType)
     {
