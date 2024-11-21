@@ -39,6 +39,7 @@ class ComponentController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function store(Request $request)
     {
@@ -47,6 +48,7 @@ class ComponentController extends Controller
 
     /**
      * Display the specified resource.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function show(Component $component)
     {
@@ -55,6 +57,7 @@ class ComponentController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function edit(Component $component)
     {
@@ -63,6 +66,7 @@ class ComponentController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function update(Request $request, Component $component)
     {
@@ -71,6 +75,7 @@ class ComponentController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function destroy(Component $component)
     {
