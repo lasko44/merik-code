@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1732130623">
-  <project timestamp="1732130623">
+<coverage generated="1732159475">
+  <project timestamp="1732159475">
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Http/Controllers/Admin/CategoryController.php">
       <class name="App\Http\Controllers\Admin\CategoryController" namespace="global">
         <metrics complexity="7" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="14" coveredelements="0"/>
@@ -25,27 +25,27 @@
       <class name="App\Http\Controllers\Admin\Components\ComponentController" namespace="global">
         <metrics complexity="7" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="20" coveredelements="0"/>
       </class>
-      <line num="18" type="method" name="index" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="20" type="stmt" count="0"/>
-      <line num="22" type="stmt" count="0"/>
+      <line num="19" type="method" name="index" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="21" type="stmt" count="0"/>
       <line num="23" type="stmt" count="0"/>
       <line num="24" type="stmt" count="0"/>
-      <line num="30" type="method" name="create" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="32" type="stmt" count="0"/>
-      <line num="34" type="stmt" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="31" type="method" name="create" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="33" type="stmt" count="0"/>
       <line num="35" type="stmt" count="0"/>
       <line num="36" type="stmt" count="0"/>
-      <line num="42" type="method" name="store" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="45" type="stmt" count="0"/>
-      <line num="50" type="method" name="show" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="53" type="stmt" count="0"/>
-      <line num="58" type="method" name="edit" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="61" type="stmt" count="0"/>
-      <line num="66" type="method" name="update" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="69" type="stmt" count="0"/>
-      <line num="74" type="method" name="destroy" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="77" type="stmt" count="0"/>
-      <metrics loc="79" ncloc="53" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="20" coveredelements="0"/>
+      <line num="37" type="stmt" count="0"/>
+      <line num="43" type="method" name="store" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="46" type="stmt" count="0"/>
+      <line num="51" type="method" name="show" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="54" type="stmt" count="0"/>
+      <line num="59" type="method" name="edit" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="62" type="stmt" count="0"/>
+      <line num="67" type="method" name="update" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="70" type="stmt" count="0"/>
+      <line num="75" type="method" name="destroy" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="78" type="stmt" count="0"/>
+      <metrics loc="80" ncloc="54" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="20" coveredelements="0"/>
     </file>
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Http/Controllers/Admin/Components/ComponentPropsController.php">
       <class name="App\Http\Controllers\Admin\Components\ComponentPropsController" namespace="global">
@@ -72,22 +72,23 @@
         <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
       </class>
       <line num="11" type="method" name="index" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="13" type="stmt" count="0"/>
-      <line num="15" type="stmt" count="0"/>
-      <line num="17" type="stmt" count="0"/>
-      <metrics loc="20" ncloc="20" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="16" type="stmt" count="0"/>
+      <line num="18" type="stmt" count="0"/>
+      <metrics loc="21" ncloc="21" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
     </file>
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Http/Controllers/Admin/GeminiDocumentController.php">
       <class name="App\Http\Controllers\Admin\GeminiDocumentController" namespace="global">
-        <metrics complexity="2" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
+        <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
       </class>
-      <line num="19" type="method" name="index" visibility="public" complexity="2" crap="6" count="0"/>
-      <line num="21" type="stmt" count="0"/>
-      <line num="23" type="stmt" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="26" type="stmt" count="0"/>
-      <line num="28" type="stmt" count="0"/>
-      <metrics loc="33" ncloc="31" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
+      <line num="17" type="method" name="index" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="19" type="stmt" count="2"/>
+      <line num="21" type="stmt" count="2"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <metrics loc="31" ncloc="29" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="7" coveredelements="7"/>
     </file>
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Http/Controllers/Controller.php">
       <class name="App\Http\Controllers\Controller" namespace="global">
@@ -249,9 +250,9 @@
       </class>
       <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Utilities/ComponentUtil.php">
-      <class name="App\Utilities\ComponentUtil" namespace="global">
-        <metrics complexity="13" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="35" elements="43" coveredelements="39"/>
+    <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Utilities/ComponentUtil/ComponentUtil.php">
+      <class name="App\Utilities\ComponentUtil\ComponentUtil" namespace="global">
+        <metrics complexity="13" methods="6" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="31" elements="43" coveredelements="34"/>
       </class>
       <line num="12" type="method" name="getComponentDirectories" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="14" type="stmt" count="1"/>
@@ -260,12 +261,12 @@
       <line num="19" type="stmt" count="1"/>
       <line num="22" type="method" name="getComponentContents" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="25" type="stmt" count="0"/>
-      <line num="28" type="method" name="buildPath" visibility="private" complexity="3" crap="3" count="2"/>
-      <line num="30" type="stmt" count="2"/>
-      <line num="31" type="stmt" count="1"/>
-      <line num="32" type="stmt" count="1"/>
-      <line num="33" type="stmt" count="1"/>
-      <line num="35" type="stmt" count="1"/>
+      <line num="28" type="method" name="buildPath" visibility="private" complexity="3" crap="5.67" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="35" type="stmt" count="0"/>
       <line num="37" type="stmt" count="1"/>
       <line num="40" type="method" name="cleanDirectories" visibility="private" complexity="3" crap="3" count="1"/>
       <line num="42" type="stmt" count="1"/>
@@ -296,7 +297,15 @@
       <line num="80" type="stmt" count="1"/>
       <line num="81" type="stmt" count="1"/>
       <line num="84" type="stmt" count="1"/>
-      <metrics loc="86" ncloc="86" classes="1" methods="6" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="35" elements="43" coveredelements="39"/>
+      <metrics loc="86" ncloc="86" classes="1" methods="6" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="37" coveredstatements="31" elements="43" coveredelements="34"/>
+    </file>
+    <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Utilities/ComponentUtil/ComponentUtilFacade.php">
+      <class name="App\Utilities\ComponentUtil\ComponentUtilFacade" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
+      </class>
+      <line num="14" type="method" name="getFacadeAccessor" visibility="protected" complexity="1" crap="1" count="2"/>
+      <line num="16" type="stmt" count="2"/>
+      <metrics loc="18" ncloc="14" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
     </file>
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Utilities/GeminiAPICaller.php">
       <class name="App\Utilities\GeminiAPICaller" namespace="global">
@@ -319,6 +328,6 @@
       <line num="35" type="stmt" count="1"/>
       <metrics loc="38" ncloc="38" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="15" coveredelements="15"/>
     </file>
-    <metrics files="20" loc="953" ncloc="723" classes="17" methods="68" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="130" coveredstatements="61" elements="198" coveredelements="74"/>
+    <metrics files="21" loc="971" ncloc="737" classes="18" methods="69" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="132" coveredstatements="64" elements="201" coveredelements="78"/>
   </project>
 </coverage>
