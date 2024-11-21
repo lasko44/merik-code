@@ -1,13 +1,15 @@
 
 
 [1;37;40mCode Coverage Report:    [0m
-[1;37;40m  2024-11-21 13:11:27    [0m
+[1;37;40m  2024-11-21 14:38:23    [0m
 [1;37;40m                         [0m
 [1;37;40m Summary:                [0m
-[30;43m  Classes: 58.33% (7/12) [0m
-[37;41m  Methods: 50.00% (14/28)[0m
-[30;43m  Lines:   70.33% (64/91)[0m
+[30;43m  Classes: 66.67% (8/12) [0m
+[30;43m  Methods: 57.14% (16/28)[0m
+[30;43m  Lines:   79.12% (72/91)[0m
 
+App\Http\Controllers\Admin\Components\ComponentController
+  [30;42mMethods: 100.00% ( 2/ 2)[0m   [30;42mLines: 100.00% (  8/  8)[0m
 App\Http\Controllers\Admin\GeminiDocumentController
   [30;42mMethods: 100.00% ( 1/ 1)[0m   [30;42mLines: 100.00% (  6/  6)[0m
 App\Models\Category
