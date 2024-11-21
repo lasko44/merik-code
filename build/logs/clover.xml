@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1732199903">
-  <project timestamp="1732199903">
+<coverage generated="1732200382">
+  <project timestamp="1732200382">
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Http/Controllers/Admin/CategoryController.php">
       <class name="App\Http\Controllers\Admin\CategoryController" namespace="global">
         <metrics complexity="7" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
