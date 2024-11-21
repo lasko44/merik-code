@@ -11,9 +11,15 @@ use Tests\TestCase;
 class ComponentControllerTest extends TestCase
 {
     use RefreshDatabase;
-    /**
-     * A basic feature test example.
-     */
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->withoutVite(); //Fixes it :D
+    }
+
+    
     public function test_index(): void
     {
         $response = $this->get(route('component-library.index'));
