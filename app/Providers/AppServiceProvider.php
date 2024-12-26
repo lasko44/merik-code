@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Utilities\ComponentUtil\ComponentUtil;
+use App\Utilities\ComponentUtil;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -12,7 +12,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind('componentUtil', function (){
+        $this->app->bind('ComponentUtil', function (){
             return new ComponentUtil();
         });
     }

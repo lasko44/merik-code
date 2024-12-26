@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin\Components;
 
+use App\Facades\ComponentUtil;
 use App\Http\Controllers\Controller;
-use App\Utilities\ComponentUtil\ComponentUtilFacade;
 use Illuminate\Http\JsonResponse;
 
 class DirectoryController extends Controller
@@ -13,7 +13,7 @@ class DirectoryController extends Controller
 
         $path = request()->input('path') ?? [];
 
-        $directories = ComponentUtilFacade::getComponentDirectories($path);
+        $directories = ComponentUtil::getComponentDirectories($path);
 
         return response()->json($directories);
     }

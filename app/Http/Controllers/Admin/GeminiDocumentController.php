@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Facades\ComponentUtil;
 use App\Http\Controllers\Controller;
-use App\Utilities\ComponentUtil\ComponentUtil;
-use App\Utilities\ComponentUtil\ComponentUtilFacade;
 use App\Utilities\GeminiAPICaller;
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
@@ -18,7 +17,7 @@ class GeminiDocumentController extends Controller
     {
         $payload = request()->query('payload');
          try {
-             $fileContents = ComponentUtilFacade::getComponentContents($payload);
+             $fileContents = ComponentUtil::getComponentContents($payload);
              $geminiResponse = $caller->call(self::PROMPT, $fileContents);
 
              return response()->json($geminiResponse);
