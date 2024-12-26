@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Utilities\ComponentUtil;
+namespace App\Facades;
+
 
 use Illuminate\Support\Facades\Facade;
 
@@ -8,11 +9,11 @@ use Illuminate\Support\Facades\Facade;
  * @method static getComponentDirectories()
  * @method static getComponentContents(array|string|null $payload)
  */
-class ComponentUtilFacade extends Facade
+class ComponentUtil extends Facade
 {
 
     protected static function getFacadeAccessor(): string
     {
-        return ComponentUtil::class;
+        return \App\Utilities\ComponentUtil::class;
     }
 }

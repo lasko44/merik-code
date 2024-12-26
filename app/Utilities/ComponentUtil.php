@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Utilities\ComponentUtil;
+namespace App\Utilities;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -64,7 +64,8 @@ class ComponentUtil
         }, $files);
 
         return array_filter($mappedArray, function ($item) {
-            return Str::endsWith($item["name"], ".vue");
+            return Str::endsWith($item["name"],
+                ".vue");
         });
     }
 

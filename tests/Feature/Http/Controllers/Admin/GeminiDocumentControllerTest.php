@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Http\Controllers\Admin;
 
+use App\Facades\ComponentUtil;
 use App\Http\Controllers\Admin\GeminiDocumentController;
-use App\Utilities\ComponentUtil\ComponentUtilFacade;
 use App\Utilities\GeminiAPICaller;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mockery;
@@ -26,8 +26,8 @@ class GeminiDocumentControllerTest extends TestCase
         $fileContents = '<template><div>Example</div></template>';
         $geminiResponse = ['documentedCode' => 'Documented Vue 3 Code.'];
 
-        // Mock the ComponentUtilFacade
-        ComponentUtilFacade::shouldReceive('getComponentContents')
+        // Mock the ComponentUtil
+        ComponentUtil::shouldReceive('getComponentContents')
             ->once()
             ->with($payload)
             ->andReturn($fileContents);
@@ -59,8 +59,8 @@ class GeminiDocumentControllerTest extends TestCase
         // Mock the payload for the request
         $payload = 'non-existent-component.vue';
 
-        // Mock the ComponentUtilFacade to throw an exception
-        ComponentUtilFacade::shouldReceive('getComponentContents')
+        // Mock the ComponentUtil to throw an exception
+        ComponentUtil::shouldReceive('getComponentContents')
             ->once()
             ->with($payload)
             ->andThrow(new \Exception('File not found'));

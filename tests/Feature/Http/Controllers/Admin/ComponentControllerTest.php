@@ -2,10 +2,8 @@
 
 namespace Tests\Feature\Http\Controllers\Admin;
 
-use App\Utilities\ComponentUtil\ComponentUtilFacade;
+use App\Facades\ComponentUtil;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Inertia\Testing\Assert;
 use Tests\TestCase;
 
 class ComponentControllerTest extends TestCase
@@ -19,7 +17,7 @@ class ComponentControllerTest extends TestCase
         $this->withoutVite(); //Fixes it :D
     }
 
-    
+
     public function test_index(): void
     {
         $response = $this->get(route('component-library.index'));
@@ -31,7 +29,7 @@ class ComponentControllerTest extends TestCase
     {
         // Mock the facade's return value
         $mockComponentDirectories = ['directory1', 'directory2'];
-        ComponentUtilFacade::shouldReceive('getComponentDirectories')
+        ComponentUtil::shouldReceive('getComponentDirectories')
             ->once()
             ->andReturn($mockComponentDirectories);
 

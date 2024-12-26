@@ -49,6 +49,7 @@ export default defineConfig({
                 'resources/js/bootstrap.js',
                 'resources/js/Shared/Typography/utils/classes.js',
                 'resources/js/Shared/Inputs/utils/classes.js',
+                'resources/js/ziggy.js',
                 'jest.config.mjs',
                 'eslint.config.js'
             ]
