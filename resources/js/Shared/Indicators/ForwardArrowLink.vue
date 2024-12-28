@@ -41,13 +41,6 @@ const arrowClasses = computed(() => {
   }
 });
 
-// const labelClasses = computed( () => {
-//   switch (keys.textTheme){
-//     cas
-//   }
-// });
-
-
 
 </script>
 
@@ -58,14 +51,10 @@ const arrowClasses = computed(() => {
         <div class="font-bold mt-0.5 mr-1">
           {{ label }}
         </div>
-        <div :class="arrowClasses">
+        <div id="forward-arrow" :class="arrowClasses">
           <ArrowRightCircleIcon class="mt-0.5"/>
         </div>
       </div>
     </Link>
   </div>
 </template>
-
-<style scoped>
-
-</style>
