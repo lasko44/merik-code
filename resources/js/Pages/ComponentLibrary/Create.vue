@@ -2,9 +2,10 @@
 import MainLayout from "@/Layouts/MainLayout.vue";
 import LargeTitle from "@/Shared/Typography/LargeTitle.vue";
 import {computed} from "vue";
+import { Head } from '@inertiajs/vue3'
 import {defaultOptionalArrayProp} from "@/Shared/Props/common.js";
-import Select from "@/Shared/Inputs/Select.vue";
 import Form from "@/Pages/ComponentLibrary/utils/Form.vue";
+import {route} from "ziggy-js";
 const props = defineProps({
   componentDirectories: defaultOptionalArrayProp([]),
 });
@@ -13,6 +14,10 @@ const props = defineProps({
 </script>
 
 <template>
+  <Head>
+    <title>Register Component</title>
+    <meta name="description" content="Register Component">
+  </Head>
   <MainLayout>
     <div class="flex justify-center mt-10">
       <div class="w-1/2">

@@ -84,7 +84,6 @@ export const LargeIcon = ( key ) => {
         red: [ICON_SIZES.LG.width, ICON_SIZES.LG.height, COLORS.RED],
         green: [ICON_SIZES.LG.width, ICON_SIZES.LG.height, COLORS.GREEN],
     }
-
     return getObjectValueByKey(key, themes);
 }
 
