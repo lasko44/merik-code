@@ -14,11 +14,14 @@ const props = defineProps({
 //TODO this is kinda dumb and specific fix later
 const buttonTypeComponent = computed(() => {
   let type = '';
-   if(!props.action || props.action?.buttonType.toLowerCase() === types.locked){
+   if(!props.action || props.action?.buttonType.toLowerCase() === types.locked.name){
      type = types.locked.name;
    }
-   if(props.action?.buttonType.toLowerCase() === types.link){
+   if(props.action?.buttonType.toLowerCase() === types.link.name){
      type = types.link.name
+   }
+   if(type === ''){
+     throw ("Button Type is not Defined received type: \"" + props.action?.buttonType + "\"");
    }
   return componentGenerator(type);
 });

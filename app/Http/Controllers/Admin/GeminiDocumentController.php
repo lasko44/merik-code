@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Facades\ComponentUtil;
 use App\Http\Controllers\Controller;
-use App\Utilities\ComponentUtil;
 use App\Utilities\GeminiAPICaller;
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
-use Illuminate\Http\Request;
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
 
 class GeminiDocumentController extends Controller
 {
@@ -26,7 +23,7 @@ class GeminiDocumentController extends Controller
              return response()->json($geminiResponse);
          }
          catch (Exception|GuzzleException $exception){
-
+             return response(['error'=>true,'error-msg'=>'Failed to retrieve contents.'],404);
          }
     }
 }

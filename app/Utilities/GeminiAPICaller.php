@@ -35,14 +35,4 @@ class GeminiAPICaller
         return json_encode($body);
     }
 
-    public function test() {
-        $thing = new \stdClass();
-
-        $thing->roles->advisor = "new advisor";
-        $thing->roles->registered = "new advisor";
-        $thing->advisor = "new advisor";
-        $thing->registered = "new advisor";
-
-    }
-
 }
