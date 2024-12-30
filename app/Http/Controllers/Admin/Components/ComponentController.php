@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin\Components;
 
+use App\Facades\ComponentUtil;
 use App\Http\Controllers\Controller;
 use App\Models\Component;
 use App\Models\Exercise;
-use App\Utilities\ComponentUtil;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -17,7 +17,7 @@ class ComponentController extends Controller
      */
     public function index(): Response
     {
-        $components = Component::with('componentProps')->orderBy('name')->get();
+        $components = Component::query()->orderBy('name')->get();
 
         return Inertia::render('ComponentLibrary/Index', [
             'exercise' => Exercise::with(['category','language'])->first(),
@@ -38,6 +38,7 @@ class ComponentController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function store(Request $request)
     {
@@ -46,6 +47,7 @@ class ComponentController extends Controller
 
     /**
      * Display the specified resource.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function show(Component $component)
     {
@@ -54,6 +56,7 @@ class ComponentController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function edit(Component $component)
     {
@@ -62,6 +65,7 @@ class ComponentController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function update(Request $request, Component $component)
     {
@@ -70,6 +74,7 @@ class ComponentController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function destroy(Component $component)
     {
