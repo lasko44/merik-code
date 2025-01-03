@@ -30,6 +30,7 @@ const textValue = ref(null);
 const emit = defineEmits(['update:modelValue'])
 const vResize = resize;
 const positionLeft = ref(300);
+const showSpinner = ref(false);
 
 watch(() => props.error, (newValue) => {
   if (newValue) {
@@ -40,13 +41,19 @@ watch(() => props.error, (newValue) => {
 });
 
 function updateText(value) {
+  showSpinner.value = false
   textValue.value = value;
   emit('update:modelValue', textValue.value);
 }
 function resized(){
   const textArea = document.getElementById("dynamic-text-area");
-  positionLeft.value = Math.round(textArea.getBoundingClientRect().width/2);
+  positionLeft.value = Math.round(textArea.getBoundingClientRect().width/2.25);
 }
+
+function updateSpinner(value) {
+  showSpinner.value = value;
+}
+
 
 </script>
 
@@ -54,9 +61,9 @@ function resized(){
   <div>
     <div id="dynamic-text-area" v-resize="resized">
       <Label :label="label" :required="required"/>
-      <GeminiGenerator :payload="payload" @update="updateText" :route-action="aiRoute" v-if="enableAi"/>
+      <GeminiGenerator :payload="payload" @update="updateText" @spinner="updateSpinner" :route-action="aiRoute" v-if="enableAi"/>
       <textarea :class="inputClass"  :value="textValue" :rows="rows"/>
-      <Spinner  :class="['relative','bottom-[250px]']" :style="`left: ${positionLeft}px`"/>
+      <Spinner v-if="showSpinner" :class="['relative','bottom-[250px]']" :style="`left: ${positionLeft}px`"/>
     </div>
     <div v-if="error">
       <p :class="COLORS.RED">{{errorMessage}}</p>
