@@ -24,14 +24,18 @@ const form = useForm({
   description: null
 });
 
+const formDisabled = computed(()=> {
+  return !(form.path !== null && form.name !== null && form.description !== null);
+});
+
 function setName(value){
   form.name = value;
   form.path = store.path;
 }
 
-const formDisabled = computed(()=> {
-    return !(form.path !== null && form.name !== null && form.description !== null);
-});
+function submit() {
+
+}
 
 </script>
 

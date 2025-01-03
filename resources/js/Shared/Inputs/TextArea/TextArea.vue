@@ -63,7 +63,7 @@ function updateSpinner(value) {
       <Label :label="label" :required="required"/>
       <GeminiGenerator :payload="payload" @update="updateText" @spinner="updateSpinner" :route-action="aiRoute" v-if="enableAi"/>
       <textarea :class="inputClass"  :value="textValue" :rows="rows"/>
-      <Spinner v-if="showSpinner" :class="['relative','bottom-[250px]']" :style="`left: ${positionLeft}px`"/>
+      <Spinner v-if="showSpinner" :class="['relative','bottom-[250px]', 'mb-[-40px]']" :style="`left: ${positionLeft}px`"/>
     </div>
     <div v-if="error">
       <p :class="COLORS.RED">{{errorMessage}}</p>

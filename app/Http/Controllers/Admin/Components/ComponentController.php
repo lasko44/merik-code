@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Components;
 
 use App\Facades\ComponentUtil;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\ComponentRequest;
 use App\Models\Component;
 use App\Models\Exercise;
 use Illuminate\Http\Request;
@@ -40,7 +41,7 @@ class ComponentController extends Controller
      * Store a newly created resource in storage.
      * @codeCoverageIgnore //TODO Remove when used
      */
-    public function store(Request $request)
+    public function store(ComponentRequest $request)
     {
         //
     }
