@@ -19,8 +19,8 @@ const props = defineProps({
     <meta name="description" content="Register Component">
   </Head>
   <MainLayout>
-    <div class="flex justify-center mt-10">
-      <div class="w-1/2">
+    <div class="flex justify-center">
+      <div class="w-1/2 mt-10">
         <LargeTitle title="Document New Vue Component"/>
         <Form :components="componentDirectories" :route-action="route('component-library.store')"/>
       </div>

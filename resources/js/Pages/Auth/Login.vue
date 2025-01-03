@@ -16,7 +16,8 @@ const form = useForm({
 });
 
 function submit() {
-  form.post(route('login'));
+  const loginRoute = route('login.store');
+  form.post(loginRoute);
 }
 
 </script>
