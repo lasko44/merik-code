@@ -7,12 +7,18 @@ import Text from "@/Shared/Inputs/Text.vue";
 import Button from "@/Shared/Inputs/Button.vue";
 import Password from "@/Shared/Inputs/Password.vue";
 import Checkbox from "@/Shared/Inputs/Checkbox.vue";
+import {route} from "ziggy-js";
 
 const form = useForm({
-  username: ref(null),
-  password: ref(null),
-  rememberMe: ref(false),
+  username: "",
+  password: "",
+  rememberMe: false,
 });
+
+function submit() {
+  form.post(route('login'));
+}
+
 </script>
 
 <template>
@@ -21,14 +27,17 @@ const form = useForm({
     <meta name="description" content="Login to Merik Code">
   </Head>
   <MainLayout>
-    <div class="flex justify-center mt-20">
+    <div class="flex justify-center mt-[-60px] mb-[-60px]">
+      <img src="images/avatar.png" class="logo1" alt="merik-logo">
+    </div>
+    <div class="flex justify-center">
       <StandardCard class="w-1/2" :title="'Login'">
         <section class="flex justify-center mt-6">
           <div class="w-3/4">
             <Text label="Username" v-model="form.username"/>
             <Password class="mt-3" label="Password" v-model="form.password"/>
             <Checkbox class="mt-3" label="Remember Me" v-model="form.rememberMe"/>
-            <Button :disabled="false" class="w-full mt-10" text="Login"/>
+            <Button :disabled="false" @click="submit" class="w-full mt-10" text="Login"/>
           </div>
         </section>
       </StandardCard>
@@ -37,5 +46,7 @@ const form = useForm({
 </template>
 
 <style scoped>
-
+.logo1 {
+  mix-blend-mode:multiply;
+}
 </style>
