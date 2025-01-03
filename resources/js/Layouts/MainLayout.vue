@@ -5,7 +5,7 @@
 
 <template>
   <MainNav></MainNav>
-  <main class="bg-gradient-to-br mb-auto from-neutral-100 to-neutral-200 " style="min-height: 100vh;">
+  <main class="bg-gradient-to-br mb-auto from-neutral-100 to-neutral-200" style="min-height: 100vh;">
     <slot />
   </main>
   <MainFooter/>
