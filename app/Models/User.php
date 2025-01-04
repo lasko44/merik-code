@@ -42,4 +42,9 @@ class User extends Authenticatable
         return $this->belongsTo(UserType::class);
     }
 
+    public function isComponentAuthorized(): bool
+    {
+        return $this->userType()->first()->isComponentAdmin();
+    }
+
 }

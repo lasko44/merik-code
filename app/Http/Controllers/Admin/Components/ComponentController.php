@@ -8,11 +8,19 @@ use App\Http\Requests\Admin\ComponentRequest;
 use App\Models\Component;
 use App\Models\Exercise;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Inertia\Inertia;
 use Inertia\Response;
 
 class ComponentController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->authorizeResource(Component::class,'component');
+    }
+
     /**
      * Display a listing of the resource.
      */
