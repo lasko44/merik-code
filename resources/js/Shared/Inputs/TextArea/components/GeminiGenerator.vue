@@ -1,7 +1,7 @@
 <script setup>
 
 import {optionalStringProp, requiredStringProp} from "@/Shared/Props/common.js";
-import {ref} from "vue";
+import {ref, watch} from "vue";
 import axios from 'axios';
 import {COLORS} from "@/Shared/Typography/utils/classes.js";
 import {BACKGROUND} from "@/Shared/Inputs/utils/classes.js";
@@ -12,24 +12,26 @@ const props = defineProps({
   payload: optionalStringProp
 });
 
-const emit = defineEmits(["update"]);
+watch(() => props.payload, (newValue) =>{
+  btnDisabled.value = !newValue;
+});
 
-const loading = ref(false);
+const emit = defineEmits(["update","spinner"]);
+
 const showError = ref(false);
 const btnDisabled = ref(true);
 
 function generate() {
-    loading.value = true;
+  emit('spinner', true);
     axios.get(props.routeAction, {params: {payload: props.payload}})
         .catch(function (error){
           showError.value = true;
-          loading.value = false;
+          emit('spinner', false);
           console.error(error);
         })
         .then( response => {
           let text = response.data
           emit('update', text);
-          loading.value = false;
         })
 }
 
