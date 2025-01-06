@@ -3,7 +3,7 @@
 import {defaultOptionalArrayProp, requiredProp, requiredStringProp} from "@/Shared/Props/common.js";
 import FileSelector from "@/Shared/Inputs/FileSelector/FileSelector.vue";
 import Button from "@/Shared/Inputs/Button.vue";
-import {ref} from "vue";
+import {computed, ref} from "vue";
 import {useForm} from "@inertiajs/vue3";
 import Text from "@/Shared/Inputs/Text.vue";
 import TextArea from "@/Shared/Inputs/TextArea/TextArea.vue";
@@ -24,12 +24,18 @@ const form = useForm({
   description: null
 });
 
+const formDisabled = computed(()=> {
+  return !(form.path !== null && form.name !== null && form.description !== null);
+});
+
 function setName(value){
   form.name = value;
   form.path = store.path;
 }
 
-const formDisabled = ref(true);
+function submit() {
+
+}
 
 </script>
 
