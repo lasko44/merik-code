@@ -9,7 +9,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
-use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 
 
@@ -42,10 +41,15 @@ class User extends Authenticatable
         return $this->belongsTo(UserType::class);
     }
 
-
-    public function isComponentAuthorized(): bool
+    public function isAdmin(): bool
     {
-        return $this->userType()->first()->isComponentAdmin();
+        return $this->userType()->first()->isAdmin();
     }
+
+    public function isSuperAdmin(): bool
+    {
+        return $this->userType()->first()->isSuperAdmin();
+    }
+
 
 }

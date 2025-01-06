@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Policies;
+namespace App\Policies\Admin;
 
 use App\Models\Component;
 use App\Models\User;
@@ -13,17 +13,18 @@ class ComponentPolicy
      */
     public function viewAny(User $user): Response
     {
-        return  $user->isComponentAuthorized()
+        return  $user->isAdmin()
             ? Response::allow()
             : Response::denyWithStatus(404);
     }
 
     /**
      * Determine whether the user can view the model.
+     * @codeCoverageIgnore  //TODO Remove when used
      */
     public function view(User $user, Component $component): Response
     {
-        return  $user->isComponentAuthorized()
+        return  $user->isAdmin()
             ? Response::allow()
             : Response::denyWithStatus(404);
     }
@@ -33,47 +34,51 @@ class ComponentPolicy
      */
     public function create(User $user): Response
     {
-        return  $user->isComponentAuthorized()
+        return  $user->isAdmin()
             ? Response::allow()
             : Response::denyWithStatus(404);
     }
 
     /**
      * Determine whether the user can update the model.
+     * @codeCoverageIgnore  //TODO Remove when used
      */
     public function update(User $user, Component $component): Response
     {
-        return  $user->isComponentAuthorized()
+        return  $user->isAdmin()
             ? Response::allow()
             : Response::denyWithStatus(404);
     }
 
     /**
      * Determine whether the user can delete the model.
+     * @codeCoverageIgnore  //TODO Remove when used
      */
     public function delete(User $user, Component $component): Response
     {
-        return  $user->isComponentAuthorized()
+        return  $user->isAdmin()
             ? Response::allow()
             : Response::denyWithStatus(404);
     }
 
     /**
      * Determine whether the user can restore the model.
+     * @codeCoverageIgnore  //TODO Remove when used
      */
     public function restore(User $user, Component $component): Response
     {
-        return  $user->isComponentAuthorized()
+        return  $user->isAdmin()
             ? Response::allow()
             : Response::denyWithStatus(404);
     }
 
     /**
      * Determine whether the user can permanently delete the model.
+     * @codeCoverageIgnore  //TODO Remove when used
      */
     public function forceDelete(User $user, Component $component): Response
     {
-        return  $user->isComponentAuthorized()
+        return  $user->isAdmin()
             ? Response::allow()
             : Response::denyWithStatus(404);
     }

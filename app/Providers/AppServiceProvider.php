@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Component;
-use App\Policies\ComponentPolicy;
+use App\Policies\Admin\ComponentPolicy;
 use App\Utilities\ComponentUtil;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
