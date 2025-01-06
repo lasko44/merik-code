@@ -3,6 +3,7 @@
 namespace Tests\Feature\Http\Controllers\Admin;
 
 use App\Facades\ComponentUtil;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -13,16 +14,38 @@ class ComponentControllerTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-
-        $this->withoutVite(); //Fixes it :D
+        $this->seed();
+        $this->withoutVite();
     }
 
 
     public function test_index(): void
     {
-        $response = $this->get(route('component-library.index'));
-
+        //Super Admin Should Work
+        $user = User::factory()->superAdmin()->create();
+        $response = $this->actingAs($user)->get(route('component-library.index'));
         $response->assertStatus(200);
+
+        //Site Admin Should Work
+        $user = User::factory()->siteAdmin()->create();
+        $response = $this->actingAs($user)->get(route('component-library.index'));
+        $response->assertStatus(200);
+
+        //Course Admin Should Fail 404
+        $user = User::factory()->courseAdmin()->create();
+        $response = $this->actingAs($user)->get(route('component-library.index'));
+        $response->assertStatus(404);
+
+        //Teacher Should Fail 404
+        $user = User::factory()->courseAdmin()->create();
+        $response = $this->actingAs($user)->get(route('component-library.index'));
+        $response->assertStatus(404);
+
+        //Student Should Fail 404
+        $user = User::factory()->courseAdmin()->create();
+        $response = $this->actingAs($user)->get(route('component-library.index'));
+        $response->assertStatus(404);
+
     }
 
     public function test_create(): void
@@ -30,13 +53,26 @@ class ComponentControllerTest extends TestCase
         // Mock the facade's return value
         $mockComponentDirectories = ['directory1', 'directory2'];
         ComponentUtil::shouldReceive('getComponentDirectories')
-            ->once()
             ->andReturn($mockComponentDirectories);
 
-        // Call the route
-        $response = $this->get(route('component-library.create'));
-
-        // Ensure response status is OK
+        $user = User::factory()->superAdmin()->create();
+        $response = $this->actingAs($user)->get(route('component-library.create'));
         $response->assertOk();
+
+        $user = User::factory()->siteAdmin()->create();
+        $response = $this->actingAs($user)->get(route('component-library.create'));
+        $response->assertOk();
+
+        $user = User::factory()->courseAdmin()->create();
+        $response = $this->actingAs($user)->get(route('component-library.create'));
+        $response->assertStatus(404);
+
+        $user = User::factory()->teacher()->create();
+        $response = $this->actingAs($user)->get(route('component-library.create'));
+        $response->assertStatus(404);
+
+        $user = User::factory()->student()->create();
+        $response = $this->actingAs($user)->get(route('component-library.create'));
+        $response->assertStatus(404);
     }
 }
