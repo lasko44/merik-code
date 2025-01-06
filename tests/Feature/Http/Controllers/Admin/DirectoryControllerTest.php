@@ -14,6 +14,7 @@ class DirectoryControllerTest extends TestCase
     {
         parent::setUp();
         $this->seed();
+        $this->withoutVite();
     }
 
     public function test_index(): void
