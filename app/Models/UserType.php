@@ -14,8 +14,14 @@ class UserType extends Model
     protected $guarded = ['id'];
 
 
-    public function isComponentAdmin(): bool
+    public function isAdmin(): bool
     {
         return $this->id === 4 || $this->id === 5;
     }
+
+    public function isSuperAdmin(): bool
+    {
+        return $this->id === 5;
+    }
+
 }

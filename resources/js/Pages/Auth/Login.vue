@@ -2,7 +2,6 @@
 import MainLayout from "@/Layouts/MainLayout.vue";
 import StandardCard from "@/Shared/Cards/StandardCard.vue";
 import {Head, useForm} from "@inertiajs/vue3";
-import {ref} from "vue";
 import Text from "@/Shared/Inputs/Text.vue";
 import Button from "@/Shared/Inputs/Button.vue";
 import Password from "@/Shared/Inputs/Password.vue";
