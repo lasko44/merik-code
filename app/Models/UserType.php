@@ -16,6 +16,6 @@ class UserType extends Model
 
     public function isComponentAdmin(): bool
     {
-        return $this->id === 1 || $this->id === 2;
+        return $this->id === 4 || $this->id === 5;
     }
 }
