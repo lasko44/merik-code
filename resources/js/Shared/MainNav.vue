@@ -1,7 +1,10 @@
 <script setup>
-
 import MainNavMenu from "@/Shared/Menus/MainNavMenu.vue";
 import {COLORS} from "@/Shared/Typography/utils/classes.js";
+import {optionalProp} from "@/Shared/Props/common.js";
+
+defineProps({user: optionalProp})
+
 </script>
 
 <template>
@@ -10,7 +13,7 @@ import {COLORS} from "@/Shared/Typography/utils/classes.js";
         Here will be a menu
       </div>
       <section>
-        <MainNavMenu/>
+        <MainNavMenu :user="user"/>
       </section>
   </div>
 </template>

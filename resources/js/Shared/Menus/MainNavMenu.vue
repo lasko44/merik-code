@@ -1,12 +1,18 @@
 <script setup>
-import { usePage } from "@inertiajs/vue3";
+import {useForm, usePage} from "@inertiajs/vue3";
 import { computed, ref } from "vue";
 import clickOutside from "@/Directives/clickOutside.js";
+import {route} from "ziggy-js";
+import {COLORS} from "@/Shared/Typography/utils/classes.js";
+import {optionalProp} from "@/Shared/Props/common.js";
+
+const props = defineProps({user: optionalProp})
 
 const page = usePage();
-const user = computed(() => page.props.auth.user);
+const user = computed(() => page.props.auth?.user ?? props.user);
 const hidden = ref(true);
 const vClickOutside = clickOutside;
+const form = useForm({});
 const closeDropdown = () => {
   hidden.value = true; // Close the dropdown
 };
@@ -15,6 +21,11 @@ const toggleDropdown = (event) => {
   event.stopPropagation(); // Prevent click event from propagating
   hidden.value = !hidden.value; // Toggle dropdown visibility
 };
+
+function logout(){
+  form.post(route('logout'));
+}
+
 </script>
 
 <template>
@@ -56,14 +67,14 @@ const toggleDropdown = (event) => {
         </li>
       </ul>
       <div class="py-1">
-        <a href="javascript:void(0)"
+        <a @click="logout"
            class="block px-4 py-2 text-sm text-neutral-900 hover:cursor-pointer hover:underline">
           Sign out
         </a>
       </div>
     </div>
   </div>
-  <div v-else>
+  <div v-else :class="COLORS.WHITE">
     Login
   </div>
 </template>

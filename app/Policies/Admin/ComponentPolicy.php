@@ -15,7 +15,7 @@ class ComponentPolicy
     {
         return  $user->isAdmin()
             ? Response::allow()
-            : Response::denyWithStatus(404);
+            : Response::denyAsNotFound();
     }
 
     /**
@@ -26,7 +26,7 @@ class ComponentPolicy
     {
         return  $user->isAdmin()
             ? Response::allow()
-            : Response::denyWithStatus(404);
+            : Response::denyAsNotFound();
     }
 
     /**
@@ -36,7 +36,7 @@ class ComponentPolicy
     {
         return  $user->isAdmin()
             ? Response::allow()
-            : Response::denyWithStatus(404);
+            : Response::denyAsNotFound();
     }
 
     /**
@@ -47,7 +47,7 @@ class ComponentPolicy
     {
         return  $user->isAdmin()
             ? Response::allow()
-            : Response::denyWithStatus(404);
+            : Response::denyAsNotFound();
     }
 
     /**
@@ -58,7 +58,7 @@ class ComponentPolicy
     {
         return  $user->isAdmin()
             ? Response::allow()
-            : Response::denyWithStatus(404);
+            : Response::denyAsNotFound();
     }
 
     /**
@@ -69,7 +69,7 @@ class ComponentPolicy
     {
         return  $user->isAdmin()
             ? Response::allow()
-            : Response::denyWithStatus(404);
+            : Response::denyAsNotFound();
     }
 
     /**
@@ -80,6 +80,6 @@ class ComponentPolicy
     {
         return  $user->isAdmin()
             ? Response::allow()
-            : Response::denyWithStatus(404);
+            : Response::denyAsNotFound();
     }
 }
