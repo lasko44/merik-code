@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
@@ -33,7 +34,7 @@ class Handler extends ExceptionHandler
     {
         $response = parent::render($request, $e);
 
-        return Inertia::render('Error', ['status' => $response->status()])
+        return Inertia::render('Error', ['status' => $response->status(), 'user' => Auth::user()])
             ->toResponse($request)
             ->setStatusCode($response->status());
 

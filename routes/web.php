@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\Components\ComponentController;
 use App\Http\Controllers\Admin\Components\DirectoryController;
 use App\Http\Controllers\Admin\GeminiDocumentController;
 use App\Http\Controllers\Exercises\ExerciseController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -18,7 +19,7 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::resource('exercises', ExerciseController::class);
 Route::prefix('admin')->group(function (){
     Route::resource('component-library', ComponentController::class);
