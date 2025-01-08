@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import MainLayout from "@/Layouts/MainLayout.vue";
 import {Head} from "@inertiajs/vue3";
 
-const props = defineProps({ status: Number });
+const props = defineProps({ status: Number, user: Object });
 
 const title = computed(() => {
   return {
@@ -28,7 +28,6 @@ const randomImage = images[Math.floor(Math.random() * images.length)];
 const description = computed(() => {
   return {
     503: 'Sorry, we are doing some maintenance. Please check back soon.',
-    500: 'Whoops, something went wrong on our servers.',
     404: 'Sorry, the page you are looking for could not be found. Here\'s a funny animal picture',
     403: 'Sorry, the page you are looking for could not be found. Here\'s a funny animal picture',
   }[props.status];
@@ -40,7 +39,7 @@ const description = computed(() => {
     <title>{{ title }}</title>
     <meta name="description" :content="description">
   </Head>
-  <MainLayout>
+  <MainLayout :user="user">
     <div class="w-full flex min-h-screen max-h-screen">
       <!-- Left Section -->
       <div class="flex flex-col justify-center bg-cyan-700 items-center w-1/2 text-center">
