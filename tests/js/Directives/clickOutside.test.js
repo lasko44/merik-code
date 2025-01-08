@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils";
 import { describe, it, beforeEach, afterEach, expect, vi } from "vitest";
-import clickOutside from "@/directives/clickOutside";
+import clickOutside from "@/Directives/clickOutside";
 
 describe("clickOutside directive", () => {
     let wrapper;
