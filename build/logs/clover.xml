@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1736188720">
-  <project timestamp="1736188720">
+<coverage generated="1736366544">
+  <project timestamp="1736366544">
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Facades/ComponentUtil.php">
       <class name="App\Facades\ComponentUtil" namespace="global">
         <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
@@ -99,6 +99,14 @@
       <line num="62" type="method" name="destroy" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="65" type="stmt" count="0"/>
       <metrics loc="67" ncloc="39" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="14" coveredelements="0"/>
+    </file>
+    <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Http/Controllers/HomeController.php">
+      <class name="App\Http\Controllers\HomeController" namespace="global">
+        <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      </class>
+      <line num="11" type="method" name="index" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="13" type="stmt" count="0"/>
+      <metrics loc="16" ncloc="16" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
     </file>
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Http/Controllers/UserController.php">
       <class name="App\Http\Controllers\UserController" namespace="global">
@@ -203,10 +211,10 @@
       <line num="17" type="stmt" count="1"/>
       <line num="18" type="stmt" count="1"/>
       <line num="35" type="method" name="create" visibility="public" complexity="2" crap="2" count="1"/>
-      <line num="37" type="stmt" count="1"/>
       <line num="38" type="stmt" count="1"/>
       <line num="39" type="stmt" count="1"/>
-      <metrics loc="86" ncloc="60" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="8" coveredelements="8"/>
+      <line num="40" type="stmt" count="1"/>
+      <metrics loc="87" ncloc="61" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="8" coveredelements="8"/>
     </file>
     <file name="/Users/matthewlaszkiewicz/Projects/Merik/merik-code/app/Utilities/ComponentUtil.php">
       <class name="App\Utilities\ComponentUtil" namespace="global">
@@ -279,6 +287,6 @@
       <line num="35" type="stmt" count="1"/>
       <metrics loc="38" ncloc="38" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="15" coveredelements="15"/>
     </file>
-    <metrics files="22" loc="1139" ncloc="828" classes="15" methods="37" coveredmethods="24" conditionals="0" coveredconditionals="0" statements="109" coveredstatements="89" elements="146" coveredelements="113"/>
+    <metrics files="23" loc="1156" ncloc="845" classes="16" methods="38" coveredmethods="24" conditionals="0" coveredconditionals="0" statements="110" coveredstatements="89" elements="148" coveredelements="113"/>
   </project>
 </coverage>

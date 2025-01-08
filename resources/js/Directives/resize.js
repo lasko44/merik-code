@@ -1,4 +1,3 @@
-
 export default {
     mounted(el, binding) {
         const observer = new ResizeObserver((entries) => {

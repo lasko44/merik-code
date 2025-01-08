@@ -72,8 +72,11 @@ return [
     | and the user is authenticated. You are free to change this value.
     |
     */
+    'redirects' => [
+        'logout' => 'login',
+    ],
 
-    'home' => '/admin/component-library/create',
+    'home' => '/',
 
     /*
     |--------------------------------------------------------------------------
