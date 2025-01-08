@@ -15,7 +15,7 @@ class ComponentPolicy
     {
         return  $user->isAdmin()
             ? Response::allow()
-            : Response::denyWithStatus(404);
+            : Response::denyAsNotFound();
     }
 
     /**
@@ -26,7 +26,7 @@ class ComponentPolicy
     {
         return  $user->isAdmin()
             ? Response::allow()
-            : Response::denyWithStatus(404);
+            : Response::denyAsNotFound();
     }
 
     /**
@@ -34,9 +34,10 @@ class ComponentPolicy
      */
     public function create(User $user): Response
     {
+
         return  $user->isAdmin()
             ? Response::allow()
-            : Response::denyWithStatus(404);
+            : Response::denyAsNotFound();
     }
 
     /**
@@ -47,7 +48,7 @@ class ComponentPolicy
     {
         return  $user->isAdmin()
             ? Response::allow()
-            : Response::denyWithStatus(404);
+            : Response::denyAsNotFound();
     }
 
     /**
@@ -58,7 +59,7 @@ class ComponentPolicy
     {
         return  $user->isAdmin()
             ? Response::allow()
-            : Response::denyWithStatus(404);
+            : Response::denyAsNotFound();
     }
 
     /**
@@ -69,7 +70,7 @@ class ComponentPolicy
     {
         return  $user->isAdmin()
             ? Response::allow()
-            : Response::denyWithStatus(404);
+            : Response::denyAsNotFound();
     }
 
     /**
@@ -80,6 +81,6 @@ class ComponentPolicy
     {
         return  $user->isAdmin()
             ? Response::allow()
-            : Response::denyWithStatus(404);
+            : Response::denyAsNotFound();
     }
 }
