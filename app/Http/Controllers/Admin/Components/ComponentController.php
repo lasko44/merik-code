@@ -18,7 +18,7 @@ class ComponentController extends Controller
 
     public function __construct()
     {
-        $this->authorizeResource(Component::class,'component');
+        $this->authorizeResource(Component::class);
     }
 
     /**

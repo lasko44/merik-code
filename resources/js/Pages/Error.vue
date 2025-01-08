@@ -28,7 +28,6 @@ const randomImage = images[Math.floor(Math.random() * images.length)];
 const description = computed(() => {
   return {
     503: 'Sorry, we are doing some maintenance. Please check back soon.',
-    500: 'Whoops, something went wrong on our servers.',
     404: 'Sorry, the page you are looking for could not be found. Here\'s a funny animal picture',
     403: 'Sorry, the page you are looking for could not be found. Here\'s a funny animal picture',
   }[props.status];

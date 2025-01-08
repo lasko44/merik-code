@@ -34,6 +34,7 @@ class ComponentPolicy
      */
     public function create(User $user): Response
     {
+
         return  $user->isAdmin()
             ? Response::allow()
             : Response::denyAsNotFound();
