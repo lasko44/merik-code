@@ -32,10 +32,10 @@ function submit() {
     </div>
     <div class="flex justify-center">
       <StandardCard class="w-1/2" :title="'Login'">
-        <section class="flex justify-center mt-6">
+        <section class="flex justify-center mt-6" @keyup.enter="submit">
           <div class="w-3/4">
-            <Text label="Username" v-model="form.username"/>
-            <Password class="mt-3" label="Password" v-model="form.password"/>
+            <Text label="Username" :error="form.errors?.username" :error-message="form.errors?.username" v-model="form.username"/>
+            <Password class="mt-3" label="Password" :error="form.errors?.password" :error-message="form.errors?.password" v-model="form.password"/>
             <Checkbox class="mt-3" label="Remember Me" v-model="form.remember"/>
             <Button :disabled="false" @click="submit" class="w-full mt-10" text="Login"/>
           </div>

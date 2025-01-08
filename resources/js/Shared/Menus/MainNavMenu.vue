@@ -9,7 +9,7 @@ import {optionalProp} from "@/Shared/Props/common.js";
 const props = defineProps({user: optionalProp})
 
 const page = usePage();
-const user = computed(() => page.props.auth?.user ?? props.user);
+const user = computed(() => page.props?.auth?.user ?? props.user);
 const hidden = ref(true);
 const vClickOutside = clickOutside;
 const form = useForm({});
@@ -57,7 +57,7 @@ function logout(){
     >
       <ul class="py-2 text-sm text-neutral-900" aria-labelledby="dropdownLargeButton">
         <li>
-          <a href="#" class="block px-4 py-2 hover:bg-cyan-700 hover:bg-opacity-20">Dashboard</a>
+          <a :href="route('component-library.create')" class="block px-4 py-2 hover:bg-cyan-700 hover:bg-opacity-20">Dashboard</a>
         </li>
         <li>
           <a href="#" class="block px-4 py-2 hover:bg-cyan-700 hover:bg-opacity-20">Settings</a>
@@ -74,7 +74,7 @@ function logout(){
       </div>
     </div>
   </div>
-  <div v-else :class="COLORS.WHITE">
-    Login
+  <div v-else :class="[COLORS.WHITE, 'hover:underline', 'hover:underline-neutral-']">
+    <a :href="route('login')"> Login </a>
   </div>
 </template>
