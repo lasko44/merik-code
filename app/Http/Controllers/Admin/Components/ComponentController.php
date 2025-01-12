@@ -8,8 +8,10 @@ use App\Http\Requests\Admin\ComponentRequest;
 use App\Models\Component;
 use App\Models\Exercise;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -29,7 +31,7 @@ class ComponentController extends Controller
         $components = Component::query()->orderBy('name')->get();
 
         return Inertia::render('ComponentLibrary/Index', [
-            'exercise' => Exercise::with(['category','language'])->first(),
+            'exercise' => Exercise::with(['category', 'language'])->first(),
         ]);
     }
 
@@ -50,9 +52,18 @@ class ComponentController extends Controller
      */
     public function store(ComponentRequest $request)
     {
-        dd($request);
-        $component = Component::query()->create($request->validated());
-        dd($component);
+        $component = Component::query()->updateOrCreate(
+            ['path' => Arr::get($request->validated(), 'path')],
+            Arr::except($request->validated(), 'path')
+        );
+        
+        if ($component->exists()) {
+            Session::flash('message', 'component updated');
+        } else {
+            Session::flash('message', 'new component created');
+        }
+
+        return redirect(route('component-library.index'));
     }
 
     /**
