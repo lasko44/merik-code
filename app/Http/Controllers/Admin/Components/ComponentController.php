@@ -47,11 +47,12 @@ class ComponentController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @codeCoverageIgnore //TODO Remove when used
      */
     public function store(ComponentRequest $request)
     {
-        //
+        dd($request);
+        $component = Component::query()->create($request->validated());
+        dd($component);
     }
 
     /**

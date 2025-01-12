@@ -34,7 +34,7 @@ function setName(value){
 }
 
 function submit() {
-
+  form.post(route('component-library.store'));
 }
 
 </script>
@@ -44,6 +44,6 @@ function submit() {
   <Text :required="true" label="Component Name"  class="mt-3" :read-only="true" :value="form.name"/>
   <TextArea class="mt-3" label="Component Documentation" v-model="form.description" :payload="store.path" :required="true" :enable-ai="true" :ai-route="aiRoute" :rows="12"/>
   <div class="flex justify-end">
-    <Button class="my-3" :disabled="formDisabled" :text="'Submit'"/>
+    <Button class="my-3" @click="submit" :disabled="formDisabled" :text="'Submit'"/>
   </div>
 </template>
