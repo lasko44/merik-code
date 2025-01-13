@@ -35,7 +35,7 @@ class Handler extends ExceptionHandler
     {
 
         $response = parent::render($request, $e);
-        dd($response);
+
         if(in_array($response->status(),[500, 503, 403, 404])){
             return Inertia::render('Error', ['status' => $response->status(), 'user' => Auth::user(), 'error'])
                 ->toResponse($request)
