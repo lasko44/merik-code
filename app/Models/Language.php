@@ -11,7 +11,6 @@ use Illuminate\Support\Str;
 class Language extends Model
 {
     use HasFactory;
-
     protected $guarded = ['id'];
 
     //region Attributes

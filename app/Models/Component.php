@@ -13,10 +13,6 @@ class Component extends Model
 
     //region Relationships
 
-    public function componentProps() :HasMany
-    {
-        return $this->hasMany(ComponentProps::class);
-    }
 
     //endregion
 }

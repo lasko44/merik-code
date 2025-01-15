@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
+     * @return void
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function index()
     {
@@ -18,6 +20,7 @@ class CategoryController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function create()
     {
@@ -26,6 +29,7 @@ class CategoryController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function store(Request $request)
     {
@@ -34,6 +38,7 @@ class CategoryController extends Controller
 
     /**
      * Display the specified resource.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function show(Category $category)
     {
@@ -42,6 +47,7 @@ class CategoryController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function edit(Category $category)
     {
@@ -50,6 +56,7 @@ class CategoryController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function update(Request $request, Category $category)
     {
@@ -58,6 +65,7 @@ class CategoryController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * @codeCoverageIgnore //TODO Remove when used
      */
     public function destroy(Category $category)
     {

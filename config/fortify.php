@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'username' => 'email',
+    'username' => 'username',
 
     'email' => 'email',
 
@@ -72,8 +72,11 @@ return [
     | and the user is authenticated. You are free to change this value.
     |
     */
+    'redirects' => [
+        'logout' => 'login',
+    ],
 
-    'home' => '/dashboard',
+    'home' => '/',
 
     /*
     |--------------------------------------------------------------------------
