@@ -11,12 +11,7 @@ class Component extends Model
     use HasFactory;
     public $timestamps = false;
 
-    //region Relationships
+    protected $guarded = ['id'];
 
-    public function componentProps() :HasMany
-    {
-        return $this->hasMany(ComponentProps::class);
-    }
-
-    //endregion
+    
 }

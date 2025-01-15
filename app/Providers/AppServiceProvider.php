@@ -2,17 +2,24 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\URL;
+use App\Http\Requests\LoginRequest;
+use App\Models\Component;
+use App\Policies\Admin\ComponentPolicy;
+use App\Utilities\ComponentUtil;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+
     /**
      * Register any application services.
      */
     public function register(): void
     {
-        //
+        $this->app->bind('ComponentUtil', function (){
+            return new ComponentUtil();
+        });
     }
 
     /**
@@ -20,6 +27,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        URL::forceScheme('https');
+        Gate::policy(Component::class, ComponentPolicy::class);
     }
 }

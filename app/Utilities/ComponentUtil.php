@@ -9,7 +9,7 @@ class ComponentUtil
 {
     private const PATH = "../resources/js/Shared/";
 
-    public static function getComponentDirectories(array $path = []): array
+    public function getComponentDirectories(array $path = []): array
     {
         $directoryPath = self::buildPath($path);
 
@@ -19,13 +19,14 @@ class ComponentUtil
         return array_merge($directories, $files);
     }
 
-    public static function getComponentContents(string $path): string
+    public function getComponentContents(string $path): string
     {
 
         return File::get(self::PATH.$path);
     }
 
-    private static function buildPath(array $path): string
+
+    private function buildPath(array $path): string
     {
         if ($path !== []) {
             $newPath = ComponentUtil::PATH;
@@ -64,7 +65,8 @@ class ComponentUtil
         }, $files);
 
         return array_filter($mappedArray, function ($item) {
-            return Str::endsWith($item["name"], ".vue");
+            return Str::endsWith($item["name"],
+                ".vue");
         });
     }
 

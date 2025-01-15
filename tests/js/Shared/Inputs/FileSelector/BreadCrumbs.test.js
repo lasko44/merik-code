@@ -4,7 +4,7 @@ import {expect, test} from "vitest";
 
 const HOME = "Home/";
 const ACTIVE_CLASSES = ["font-bold", "text-cyan-700"];
-const PATH_ARRAY = ["Test/", "Dir/", "index.vue"];
+const PATH_ARRAY = ["Test/", "Dir/", "Index.vue"];
 
 test("Active tab should be home", () => {
     const wrapper = mount(BreadCrumbs);
@@ -25,7 +25,7 @@ test("Test active with path prop given", () => {
         }
     });
 
-    const expectedText = "index.vue";
+    const expectedText = "Index.vue";
     const expectedId = "#crumb-2"
     const activeTab = wrapper.vm.activeTab();
 

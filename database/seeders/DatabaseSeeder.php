@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             LanguageSeeder::class,
             ExerciseSeeder::class,
+            UserTypeSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }

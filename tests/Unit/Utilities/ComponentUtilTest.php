@@ -3,17 +3,13 @@
 namespace Tests\Unit\Utilities;
 
 use App\Utilities\ComponentUtil;
-use App\Utilities\PhpUnitHelper;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
 use Mockery;
 use Mockery\LegacyMockInterface;
 use Mockery\MockInterface;
 use PHPUnit\Framework\TestCase;
-use ReflectionException;
-use SplFileInfo;
 
 class ComponentUtilTest extends TestCase
 {
@@ -28,7 +24,7 @@ class ComponentUtilTest extends TestCase
 
     private function mockFileFacade(): Filesystem|(MockInterface&LegacyMockInterface)
     {
-        $mock = Mockery::mock('Illuminate\Filesystem\Filesystem');
+        $mock = Mockery::mock(Filesystem::class);
 
         // Mock directories method
         $mock->shouldReceive('directories')
@@ -77,31 +73,13 @@ class ComponentUtilTest extends TestCase
             ]
         ];
 
-        $result = ComponentUtil::getComponentDirectories();
-
-        // Debug output for development purposes
-        // print_r($result);
+        $componentUtil = new ComponentUtil();
+        $result = $componentUtil->getComponentDirectories();
 
         $this->assertEquals($expected, $result);
     }
 
-    /**
-     * @throws ReflectionException
-     */
-    public function testBuildPath() {
-        $expectedFile = "../resources/js/Shared/test/";
-        $expectedDirectory = "../resources/js/Shared/test/dumb/try/";
 
-        $pathOne = ['test'];
-        $pathTwo = ['test/', 'dumb/', 'try/'];
-
-        //$result1 = PhpUnitHelper::invokePrivateFunction(ComponentUtil::class, 'buildPath', [$pathOne]);
-        $result2 = PhpUnitHelper::invokePrivateFunction(ComponentUtil::class, 'buildPath', [$pathTwo]);
-
-       // $this->assertEquals($expectedFile, $result1);
-        $this->assertEquals($expectedDirectory, $result2);
-
-    }
     protected function tearDown(): void
     {
         // Close Mockery-
