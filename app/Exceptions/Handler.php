@@ -33,9 +33,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $e): JsonResponse|Response
     {
+
         $response = parent::render($request, $e);
-        if(in_array($response->status(),[503, 403, 404])){
-            return Inertia::render('Error', ['status' => $response->status(), 'user' => Auth::user()])
+
+        if(in_array($response->status(),[500, 503, 403, 404])){
+            return Inertia::render('Error', ['status' => $response->status(), 'user' => Auth::user(), 'error'])
                 ->toResponse($request)
                 ->setStatusCode($response->status());
         }

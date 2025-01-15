@@ -11,8 +11,7 @@ class Component extends Model
     use HasFactory;
     public $timestamps = false;
 
-    //region Relationships
+    protected $guarded = ['id'];
 
-
-    //endregion
+    
 }

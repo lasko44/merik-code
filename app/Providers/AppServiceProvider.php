@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Requests\LoginRequest;
 use App\Models\Component;
 use App\Policies\Admin\ComponentPolicy;
 use App\Utilities\ComponentUtil;

@@ -25,6 +25,7 @@ class ComponentUtil
         return File::get(self::PATH.$path);
     }
 
+
     private function buildPath(array $path): string
     {
         if ($path !== []) {
