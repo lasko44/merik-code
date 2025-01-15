@@ -24,7 +24,7 @@ class ComponentUtilTest extends TestCase
 
     private function mockFileFacade(): Filesystem|(MockInterface&LegacyMockInterface)
     {
-        $mock = Mockery::mock('Illuminate\Filesystem\Filesystem');
+        $mock = Mockery::mock(Filesystem::class);
 
         // Mock directories method
         $mock->shouldReceive('directories')
