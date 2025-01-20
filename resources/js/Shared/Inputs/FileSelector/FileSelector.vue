@@ -68,6 +68,7 @@ function updateDirectories(data) {
       });
 }
 
+
 const TYPES = {
   dir: "directory",
   file: "file"

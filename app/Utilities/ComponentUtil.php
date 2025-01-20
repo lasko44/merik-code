@@ -28,9 +28,23 @@ class ComponentUtil
     public function inferVueComponentProps(string $path): array
     {
         $contents = self::getComponentContents($path);
-        dd($contents);
+
+        // Match the content inside defineProps({ ... })
+        preg_match('/defineProps\s*\(\s*{(.*?)}\s*\)/s', $contents, $matches);
+
+        if (isset($matches[1])) {
+            $propsContent = $matches[1];
+
+            // Match all property names within the defineProps object
+            preg_match_all('/(\w+)\s*:/', $propsContent, $propMatches);
+
+            return $propMatches[1] ?? [];
+        }
+
         return [];
     }
+
+
     private function buildPath(array $path): string
     {
         if ($path !== []) {

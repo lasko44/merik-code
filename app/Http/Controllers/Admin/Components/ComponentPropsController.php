@@ -12,10 +12,10 @@ class ComponentPropsController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *  @codeCoverageIgnore //TODO Remove when used
      */
     public function index(): JsonResponse
     {
+
         $componentPath = request()->query('componentPath') ?? null;
         return response()->json(ComponentUtil::inferVueComponentProps($componentPath));
     }
