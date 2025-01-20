@@ -36,12 +36,15 @@ class Handler extends ExceptionHandler
 
         $response = parent::render($request, $e);
 
-        if(in_array($response->status(),[500, 503, 403, 404])){
+        if( !env('APP_DEBUG') && Auth::user() !== null &&in_array($response->status(),[500, 503, 403, 404])){
             return Inertia::render('Error', ['status' => $response->status(), 'user' => Auth::user(), 'error'])
                 ->toResponse($request)
                 ->setStatusCode($response->status());
         }
-        return Redirect::back();
+        if($response->status() === 403 && Auth::user() == null){
+            return redirect(route('login'));
+        }
+        return $response;
     }
 
     /**

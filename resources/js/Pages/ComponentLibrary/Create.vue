@@ -21,7 +21,7 @@ const props = defineProps({
   <MainLayout>
     <div class="flex justify-center">
       <div class="w-1/2 mt-10">
-        <LargeTitle title="Document New Vue Component"/>
+        <LargeTitle title="Document New Vue Component" class="mb-8"/>
         <Form :components="componentDirectories" :route-action="route('component-library.store')"/>
       </div>
     </div>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Components\ComponentController;
+use App\Http\Controllers\Admin\Components\ComponentPropsController;
 use App\Http\Controllers\Admin\Components\DirectoryController;
 use App\Http\Controllers\Admin\GeminiDocumentController;
 use App\Http\Controllers\Exercises\ExerciseController;
@@ -25,5 +26,6 @@ Route::prefix('admin')->group(function (){
     Route::resource('component-library', ComponentController::class);
     Route::resource('directory', DirectoryController::class);
     Route::get('/gemini-document',[GeminiDocumentController::class, 'index'])->name('gemini-document.index');
+    Route::resource('component-props', ComponentPropsController::class);
 });
 

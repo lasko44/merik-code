@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('components', function (Blueprint $table) {
+        Schema::create('component_props', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('component_id');
             $table->string('name');
-            $table->string('path');
-            $table->text('description');
+            $table->string('value');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('components');
+        Schema::dropIfExists('component_props');
     }
 };

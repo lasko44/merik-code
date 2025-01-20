@@ -1,40 +1,56 @@
 <script setup>
-import TitleCard from "@/Shared/Cards/TitleCard.vue";
+import { ref, onMounted, toRaw } from "vue";
 import MainLayout from "@/Layouts/MainLayout.vue";
 import ComponentWrapper from "@/Pages/ComponentLibrary/utils/ComponentWrapper.vue";
 
 const props = defineProps({
-  components:{
-    type: Object,
+  components: {
+    type: Array,
     required: false,
-    default: {},
-  }
+    default: () => [],
+  },
 });
 
-const titleCardContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut " +
-    "labore et dolore magna aliqua. Parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Amet mattis " +
-    "vulputate enim nulla aliquet porttitor lacus."
+const dynamicComponents = ref({});
 
-const titleCard = "This component displays a content box with a main title, " +
-    "optional subtitle, and label. It also includes an optional action status indicator (LessonStatusIndicator) " +
-    "displayed at the bottom right corner. The component accepts several props to customize the main title, subtitle, " +
-    "label, content, and whether to show the action status indicator."
+const loadComponents = async () => {
+  const loadedComponents = {};
+  for (const rawComponent of props.components) {
+    const component = toRaw(rawComponent); // Unwrap reactive object
+    try {
+      // Use a relative path for dynamic imports
+      const componentPath = `/resources/js/Shared/${component.path}`;
+      console.log(`Loading component from: ${componentPath}`);
+      loadedComponents[component.name] = {
+        component: (await import(/* @vite-ignore */ componentPath)).default,
+        description: component.description,
+      };
+    } catch (error) {
+      console.error(`Failed to load component ${component.name} at ${component.path}:`, error);
+    }
+  }
+  dynamicComponents.value = loadedComponents;
+};
 
+onMounted(loadComponents);
 </script>
 
 <template>
   <main-layout>
-    <div class="flex mt-10 justify-center">
+    <div class="flex justify-center">
       <div class="w-1/2">
-        <component-wrapper title="TitleCard" :description="titleCard">
-          <TitleCard main-title="Main Title" sub-title="Subtitle" label="Label" :content="titleCardContent"/>
+        <component-wrapper title="Dynamic Components" :description="'Listing dynamically imported components.'">
+          <div v-for="(data, name) in dynamicComponents" :key="name" class="mb-6">
+            <h3 class="text-lg font-bold mb-2">{{ name }}</h3>
+            <component :is="data.component" />
+            <p class="mt-2 text-gray-600">{{ data.description }}</p>
+          </div>
         </component-wrapper>
       </div>
     </div>
   </main-layout>
-
 </template>
 
 <style scoped>
-
+/* Add your styles here */
 </style>

@@ -25,7 +25,12 @@ class ComponentUtil
         return File::get(self::PATH.$path);
     }
 
-
+    public function inferVueComponentProps(string $path): array
+    {
+        $contents = self::getComponentContents($path);
+        dd($contents);
+        return [];
+    }
     private function buildPath(array $path): string
     {
         if ($path !== []) {

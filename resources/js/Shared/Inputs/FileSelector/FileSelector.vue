@@ -76,8 +76,8 @@ const TYPES = {
 </script>
 
 <template>
-  <div class="border border-neutral-800 rounded bg-neutral-100">
-    <div :class="['text-neutral-100', 'p-1.5', 'bg-cyan-700']">
+  <div class="shadow-md shadow-neutral-400 rounded bg-neutral-100">
+    <div :class="['text-neutral-100', 'p-1.5', 'bg-gradient-to-r', 'from-cyan-700', 'to-cyan-800', 'rounded-t']">
       Select Vue Component <span v-if="required" :class="COLORS.RED">*</span>
     </div>
     <BreadCrumbs :path-array="filePath" @update-path="updateDirectories"/>

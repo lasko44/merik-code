@@ -7,13 +7,17 @@ use App\Http\Controllers\Controller;
 use App\Utilities\GeminiAPICaller;
 use Exception;
 use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Foundation\Application;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response;
 
 class GeminiDocumentController extends Controller
 {
-    private const PROMPT = "Please document this Vue 3 code: \n";
+    private const PROMPT = "Please tell me what this vue component does in a few sentences: \n";
     /**
      */
-    public function index(GeminiAPICaller $caller)
+    public function index(GeminiAPICaller $caller): Application|Response|JsonResponse|\Illuminate\Contracts\Foundation\Application|ResponseFactory
     {
         $payload = request()->query('payload');
          try {

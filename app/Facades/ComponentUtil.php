@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @method static getComponentDirectories()
  * @method static getComponentContents(array|string|null $payload)
+ * @method static inferVueComponentProps(string $path)
  */
 class ComponentUtil extends Facade
 {

@@ -1,28 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Components;
+namespace App\Http\Controllers;
 
-use App\Facades\ComponentUtil;
-use App\Http\Controllers\Controller;
 use App\Models\ComponentProps;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class ComponentPropsController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *  @codeCoverageIgnore //TODO Remove when used
      */
-    public function index(): JsonResponse
+    public function index()
     {
-        $componentPath = request()->query('componentPath') ?? null;
-        return response()->json(ComponentUtil::inferVueComponentProps($componentPath));
+        //
     }
 
     /**
      * Show the form for creating a new resource.
-     *  @codeCoverageIgnore //TODO Remove when used
      */
     public function create()
     {
@@ -31,7 +25,6 @@ class ComponentPropsController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *  @codeCoverageIgnore //TODO Remove when used
      */
     public function store(Request $request)
     {
@@ -40,7 +33,6 @@ class ComponentPropsController extends Controller
 
     /**
      * Display the specified resource.
-     *  @codeCoverageIgnore //TODO Remove when used
      */
     public function show(ComponentProps $componentProps)
     {
@@ -49,7 +41,6 @@ class ComponentPropsController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     *  @codeCoverageIgnore //TODO Remove when used
      */
     public function edit(ComponentProps $componentProps)
     {
@@ -58,7 +49,6 @@ class ComponentPropsController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *  @codeCoverageIgnore //TODO Remove when used
      */
     public function update(Request $request, ComponentProps $componentProps)
     {
@@ -67,7 +57,6 @@ class ComponentPropsController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *  @codeCoverageIgnore //TODO Remove when used
      */
     public function destroy(ComponentProps $componentProps)
     {

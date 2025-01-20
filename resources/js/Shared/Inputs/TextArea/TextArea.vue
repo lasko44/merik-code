@@ -25,7 +25,7 @@ const props = defineProps({
   rows: defaultOptionalNumber(6)
 });
 
-const inputClass = ref('rounded p-2 w-full border border-neutral-800 focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2');
+const inputClass = ref('rounded-b border-none p-2 w-full shadow-md shadow-neutral-400 outline-none focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2');
 const textValue = ref(null);
 const emit = defineEmits(['update:modelValue'])
 const vResize = resize;
@@ -34,9 +34,9 @@ const showSpinner = ref(false);
 
 watch(() => props.error, (newValue) => {
   if (newValue) {
-    inputClass.value = 'rounded p-2 w-full border border-red-600 focus:outline-none focus:ring-0 focus:border-red-600 focus:border-2';
+    inputClass.value = 'rounded-b p-2 w-full border border-red-600 focus:outline-none focus:ring-0 focus:border-red-600 focus:border-2';
   } else {
-    inputClass.value = 'rounded p-2 w-full border border-neutral-800 focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2';
+    inputClass.value = 'rounded-b p-2 w-full shadow-md shadow-neutral-400 focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2';
   }
 });
 

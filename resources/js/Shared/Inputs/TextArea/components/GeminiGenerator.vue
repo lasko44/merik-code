@@ -4,7 +4,7 @@ import {optionalStringProp, requiredStringProp} from "@/Shared/Props/common.js";
 import {ref, watch} from "vue";
 import axios from 'axios';
 import {COLORS} from "@/Shared/Typography/utils/classes.js";
-import {BACKGROUND} from "@/Shared/Inputs/utils/classes.js";
+import {BeakerIcon, BoltIcon} from "@heroicons/vue/24/outline/index.js";
 import Button from "@/Shared/Inputs/Button.vue";
 
 const props = defineProps({
@@ -38,9 +38,13 @@ function generate() {
 </script>
 
 <template>
-  <div class="flex w-full justify-between rounded p-2" :class="[COLORS.WHITE, BACKGROUND.BLUE]">
+  <div class="flex w-full justify-between rounded-t p-2" :class="[COLORS.WHITE, 'bg-gradient-to-r', 'from-cyan-700', 'to-cyan-800',]">
     <p  class="mt-2">This field is AI enabled! Click Generate to fill this field</p>
-    <Button @click="generate" :disabled="btnDisabled" :theme="'lite'" text="Generate"/>
+    <button @click="generate" :disabled="btnDisabled" class="flex justify-between border p-2 disabled:bg-neutral-400 disabled:opacity-25 rounded border-neutral-100 enabled:hover:bg-neutral-400 enabled:hover:bg-opacity-25">
+      Generate
+      <BoltIcon class="h-6 w-6" :disabled="btnDisabled" />
+    </button>
+
   </div>
 
 </template>
