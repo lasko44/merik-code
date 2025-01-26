@@ -17,22 +17,20 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
-            colors:{
-                jon: {
-                    '50': '#f9f6f8',
-                    '100': '#f5eef1',
-                    '200': '#ecdee4',
-                    '300': '#dec3ce',
-                    '400': '#c89ead',
-                    '500': '#b57f92',
-                    '600': '#9e6475',
-                    '700': '#86505e',
-                    '800': '#70444f',
-                    '900': '#5f3c44',
-                    '950': '#3a2127',
-                },
-                cyan: colors.cyan,
+            colors: {
+                'text': '#0e1112',
+                'background': '#f6f7f7',
+                'primary': '#7a8c93',
+                'secondary': '#aeaebd',
+                'accent': '#9c98ab',
+                'drk-text': '#eef1f2',
+                'drk-background': '#070808',
+                'drk-primary': '#6c7d84',
+                'drk-secondary': '#434351',
+                'drk-accent': '#595568',
             },
+
+
             variants: {
             },
         },

@@ -77,8 +77,8 @@ const TYPES = {
 </script>
 
 <template>
-  <div class="shadow-md shadow-neutral-400 rounded bg-neutral-100">
-    <div :class="['text-neutral-100', 'p-1.5', 'bg-gradient-to-r', 'from-cyan-700', 'to-cyan-800', 'rounded-t']">
+<div class="rounded bg-gradient-to-br from-primary/5 to-primary/10 shadow-md">
+    <div :class="['text-text', 'p-1.5', 'bg-gradient-to-r', 'from-accent', 'to-secondary', 'rounded-t']">
       Select Vue Component <span v-if="required" :class="COLORS.RED">*</span>
     </div>
     <BreadCrumbs :path-array="filePath" @update-path="updateDirectories"/>
@@ -87,7 +87,7 @@ const TYPES = {
         <ul>
           <li v-for="(option, index) in directories" :key="index" class="block my-1">
             <div @click="select(option)" class="flex hover:underline hover:cursor-pointer"
-                 :class="{'bg-cyan-700 bg-opacity-20 rounded' : selectedFile === option.name}">
+                 :class="{'bg-primary bg-opacity-20 rounded' : selectedFile === option.name}">
               <div :class="[ICON_SIZES.XS.width, ICON_SIZES.XS.height, 'mt-1', 'mr-1']">
                 <FolderIcon v-if="option.type === TYPES.dir "/>
                 <DocumentIcon v-if="option.type === TYPES.file"/>

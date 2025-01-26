@@ -30,7 +30,7 @@ function submit() {
     <div class="flex justify-center mt-[-60px] mb-[-60px]">
       <img src="images/avatar.png" class="logo1" alt="merik-logo">
     </div>
-    <div class="flex justify-center">
+    <div class="flex justify-center text-text">
       <StandardCard class="w-1/2" :title="'Login'">
         <section class="flex justify-center mt-6" @keyup.enter="submit">
           <div class="w-3/4">

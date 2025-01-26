@@ -45,8 +45,8 @@ const pathClasses = (item) => {
     'ml-0.5',
     'hover:cursor-pointer',
     TEXT_SIZES.SM,
-    {'font-light text-neutral-800 ': activeTab() !== item},
-    {'font-bold text-cyan-700': activeTab() === item},
+    {'font-light text-primary': activeTab() !== item},
+    {'font-bold text-text': activeTab() === item},
   ];
 }
 

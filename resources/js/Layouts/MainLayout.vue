@@ -10,7 +10,7 @@
 
 <template>
   <MainNav :user="user"></MainNav>
-  <main class="bg-gradient-to-br mb-auto from-neutral-100 to-neutral-200" style="min-height: 100vh;">
+  <main class="bg-background pb-20 text-text dark:bg-drk-background dark:text-drk-text" style="min-height: 100vh;">
     <slot />
   </main>
   <MainFooter/>

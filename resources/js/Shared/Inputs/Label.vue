@@ -8,7 +8,7 @@ defineProps({
   label: requiredStringProp,
 });
 
-const classes = [COLORS.BLACK, TEXT_SIZES.MD, WEIGHT.LIGHT]
+const classes = ['text-text dark:text-drk-text', TEXT_SIZES.MD, WEIGHT.LIGHT]
 </script>
 
 <template>

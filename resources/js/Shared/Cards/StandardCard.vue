@@ -7,8 +7,8 @@ import {requiredStringProp} from "@/Shared/Props/common.js";
 </script>
 
 <template>
-  <section class="border text-neutral-800 shadow-md shadow-neutral-400  bg-neutral-100 p-4 rounded">
-    <header class="border-b-2 border-cyan-700">
+  <section class="text-text shadow-md dark:shadow-none dark:text-drk-text bg-background dark:bg-primary dark:bg-opacity-20 dar p-4 rounded dark">
+    <header class="border-b-2 border-accent">
       <h1 class="font-semibold text-lg">{{title}}</h1>
     </header>
     <section class="my-2 pb-5">
