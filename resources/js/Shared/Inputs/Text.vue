@@ -8,6 +8,7 @@ import Label from "@/Shared/Inputs/Label.vue";
 const props = defineProps({
   value: optionalStringProp,
   label: optionalStringProp,
+  id: optionalStringDefaultProp("text-input"),
   placeholder: optionalStringProp,
   required: defaultFalseBoolProp,
   readOnly: defaultFalseBoolProp,
@@ -24,8 +25,7 @@ watch(() => props.value, (newValue) => {
 });
 
 // Dynamic input class based on error state
-const inputClass = ref('rounded border-none mt-2 p-2 w-full shadow-md dark:shadow-none text-text dark:bg-background focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2');
-
+const inputClass = ref('rounded border-none mt-2 p-2 w-full shadow-md dark:shadow-none text-text dark:bg-primary/10 dark:text-drk-text focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2');
 watch(() => props.error, (newValue) => {
   if (newValue) {
     inputClass.value = 'rounded mt-2 p-2 w-full border border-red-600 focus:outline-none focus:ring-0 focus:border-red-600 focus:border-2';
@@ -44,11 +44,12 @@ function update(value) {
 
 <template>
   <div>
-    <Label :label="label" :required="required" />
+    <Label :label="label" :for-id="id" :required="required" />
     <div>
       <input
           @input="update($event.target.value)"
           :value="textValue"
+          :id="id"
           :readonly="readOnly"
           :placeholder="placeholder"
           :class="inputClass"

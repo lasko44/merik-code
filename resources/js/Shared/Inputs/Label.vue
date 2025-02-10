@@ -6,13 +6,14 @@ import {COLORS, TEXT_SIZES, WEIGHT} from "@/Shared/Typography/utils/classes.js";
 defineProps({
   required: defaultFalseBoolProp,
   label: requiredStringProp,
+  forId: requiredStringProp
 });
 
 const classes = ['text-text dark:text-drk-text', TEXT_SIZES.MD, WEIGHT.LIGHT]
 </script>
 
 <template>
-  <label class="block" :class="classes">
+  <label class="block" :class="classes" :for="forId">
     {{label}}
     <span v-if="required" :class="COLORS.RED">*</span>
   </label>

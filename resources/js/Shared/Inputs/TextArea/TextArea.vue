@@ -21,6 +21,7 @@ const props = defineProps({
   placeholder: optionalStringProp,
   required: defaultFalseBoolProp,
   error: defaultFalseBoolProp,
+  id: optionalStringDefaultProp("text-area"),
   errorMessage: optionalStringDefaultProp("Something is Wrong"),
   rows: defaultOptionalNumber(6)
 });
@@ -60,9 +61,9 @@ function updateSpinner(value) {
 <template>
   <div>
     <div id="dynamic-text-area" v-resize="resized">
-      <Label :label="label" :required="required"/>
+      <Label :label="label" :required="required" :for-id="id"/>
       <GeminiGenerator :payload="payload" @update="updateText" @spinner="updateSpinner" :route-action="aiRoute" v-if="enableAi"/>
-      <textarea :class="inputClass"  :value="textValue" :rows="rows"/>
+      <textarea :class="inputClass"  :value="textValue" :rows="rows" :id="id"/>
       <Spinner v-if="showSpinner" :class="['relative','bottom-[250px]', 'mb-[-40px]']" :style="`left: ${positionLeft}px`"/>
     </div>
     <div v-if="error">

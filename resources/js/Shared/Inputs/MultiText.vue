@@ -64,6 +64,7 @@ function removeProp(index) {
     <div>
       <button
           @click="addProp"
+          aria-label="add prop"
           class="h-6 w-6 mt-2 p-1 rounded text-cyan-700 border border-cyan-700 hover:bg-cyan-700 hover:bg-opacity-25"
       >
         <PlusIcon/>

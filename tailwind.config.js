@@ -24,7 +24,7 @@ export default {
                 'secondary': '#aeaebd',
                 'accent': '#9c98ab',
                 'drk-text': '#eef1f2',
-                'drk-background': '#070808',
+                'drk-background': '#1d2121',
                 'drk-primary': '#6c7d84',
                 'drk-secondary': '#434351',
                 'drk-accent': '#595568',

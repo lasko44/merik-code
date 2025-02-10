@@ -77,7 +77,7 @@ const TYPES = {
 </script>
 
 <template>
-<div class="rounded bg-gradient-to-br from-primary/5 to-primary/10 shadow-md">
+<div class="rounded bg-gradient-to-br from-primary/10  to-primary/10 shadow-md">
     <div :class="['text-text', 'p-1.5', 'bg-gradient-to-r', 'from-accent', 'to-secondary', 'rounded-t']">
       Select Vue Component <span v-if="required" :class="COLORS.RED">*</span>
     </div>

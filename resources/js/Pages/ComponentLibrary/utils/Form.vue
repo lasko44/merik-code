@@ -63,7 +63,7 @@ function submit() {
   <FileSelector :options="components" @update:model-value="setName" :required="true"/>
   <Text :required="true" label="Component Name"  class="mt-3" :read-only="true" :value="form.name"/>
   <MultiText label="Component Props" :inferred-props="inferredProps" class="mt-3"/>
-  <TextArea class="mt-3" label="Component Documentation" v-model="form.description" :payload="store.path" :required="true" :enable-ai="true" :ai-route="aiRoute" :rows="12"/>
+  <TextArea class="mt-3" label="Component Documentation" :id="'component-description'" v-model="form.description" :payload="store.path" :required="true" :enable-ai="true" :ai-route="aiRoute" :rows="12"/>
   <div class="flex justify-end">
     <Button class="my-3" @click="submit" :disabled="formDisabled" :text="'Submit'"/>
   </div>
