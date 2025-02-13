@@ -77,8 +77,8 @@ const TYPES = {
 </script>
 
 <template>
-<div class="rounded bg-gradient-to-br from-primary/10  to-primary/10 shadow-md">
-    <div :class="['text-text', 'p-1.5', 'bg-gradient-to-r', 'from-accent', 'to-secondary', 'rounded-t']">
+<div class="rounded bg-gradient-to-br from-primary/10 to-primary/10 dark:from-drk-primary/10 dark:to-drk-primary/10 shadow-md">
+    <div :class="['text-text dark:text-drk-text', 'p-1.5', 'bg-gradient-to-r', 'from-accent', 'to-secondary', 'dark:from-drk-accent', 'dark:to-drk-secondary', 'rounded-t']">
       Select Vue Component <span v-if="required" :class="COLORS.RED">*</span>
     </div>
     <BreadCrumbs :path-array="filePath" @update-path="updateDirectories"/>
@@ -87,7 +87,7 @@ const TYPES = {
         <ul>
           <li v-for="(option, index) in directories" :key="index" class="block my-1">
             <div @click="select(option)" class="flex hover:underline hover:cursor-pointer"
-                 :class="{'bg-primary bg-opacity-20 rounded' : selectedFile === option.name}">
+                 :class="{'bg-primary dark:bg-drk-primary bg-opacity-20 rounded' : selectedFile === option.name}">
               <div :class="[ICON_SIZES.XS.width, ICON_SIZES.XS.height, 'mt-1', 'mr-1']">
                 <FolderIcon v-if="option.type === TYPES.dir "/>
                 <DocumentIcon v-if="option.type === TYPES.file"/>
@@ -100,7 +100,7 @@ const TYPES = {
       <div id="loading-box" v-show="loading && !showError" class="flex justify-center align-middle">
         <Spinner class="mt-10"/>
       </div>
-      <div v-if="showError" class="flex justify-center text-neutral-400 py-10">
+      <div v-if="showError" class="flex justify-center text-light-neutral-400 dark:text-dark-neutral-400 py-10">
         <p>Error Retrieving Directories</p>
         <div :class="[ICON_SIZES.SM.height, ICON_SIZES.SM.width, COLORS.RED, 'ml-1']">
           <ExclamationCircleIcon/>

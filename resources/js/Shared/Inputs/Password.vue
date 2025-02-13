@@ -21,7 +21,7 @@ watch(() => props.value, (newValue) => {
 });
 
 // Dynamic class based on the error state
-const inputClass = ref('rounded border-none mt-2 p-2 w-full shadow-md dark:shadow-none text-text dark:bg-background  focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2');
+const inputClass = ref('rounded border-none mt-2 p-2 w-full shadow-md dark:shadow-md text-text dark:bg-primary/10 dark:text-drk-text focus:ring-2 focus:ring-accent');
 
 watch(() => props.error, (newValue) => {
   inputClass.value = newValue

@@ -25,12 +25,12 @@ watch(() => props.value, (newValue) => {
 });
 
 // Dynamic input class based on error state
-const inputClass = ref('rounded border-none mt-2 p-2 w-full shadow-md dark:shadow-none text-text dark:bg-primary/10 dark:text-drk-text focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2');
+const inputClass = ref('rounded border-none mt-2 p-2 w-full shadow-md dark:shadow-md text-text dark:bg-primary/10 dark:text-drk-text focus:outline-none focus:ring-2 focus:ring-accent');
 watch(() => props.error, (newValue) => {
   if (newValue) {
     inputClass.value = 'rounded mt-2 p-2 w-full border border-red-600 focus:outline-none focus:ring-0 focus:border-red-600 focus:border-2';
   } else {
-    inputClass.value = 'rounded mt-2 p-2 w-full shadow-md shadow-neutral-300 focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2';
+    inputClass.value = 'rounded mt-2 p-2 w-full shadow-md dark:shadow-md text-text dark:bg-primary/10 dark:text-drk-text focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2';
   }
 });
 
@@ -54,6 +54,7 @@ function update(value) {
           :placeholder="placeholder"
           :class="inputClass"
           type="text"
+          autocomplete="off"
       />
     </div>
     <div v-if="error">

@@ -44,18 +44,17 @@ function removeProp(index) {
   <div>
     <Label :label="label"/>
     <div class="flex justify-between items-center" v-for="(prop, index) in componentProps" :key="index">
-      <input
-          v-model="prop.name"
-          type="text"
-          class="rounded border-none mt-2 p-2 flex-grow shadow-md shadow-neutral-400 focus:outline-none focus:ring-0
-          focus:border-cyan-600 focus:border-2"
-      />
+   <input
+       v-model="prop.name"
+       type="text"
+       class="rounded border-none mt-2 p-2 w-full shadow-md dark:shadow-md text-text dark:bg-primary/10 dark:text-drk-text focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2"
+   />
       <div class="w-8 flex justify-center items-center">
         <button
             aria-label="add prop"
             :disabled="!(prop.name !== '' || index > 0)"
             @click="removeProp(index)"
-            class="h-6 w-6 text-neutral-900 disabled:text-opacity-20 enabled:hover:font-bold"
+    class="h-6 w-6 text-text dark:text-drk-text disabled:text-opacity-20 enabled:hover:font-bold"
         >
           <XMarkIcon/>
         </button>
@@ -65,7 +64,7 @@ function removeProp(index) {
       <button
           @click="addProp"
           aria-label="add prop"
-          class="h-6 w-6 mt-2 p-1 rounded text-cyan-700 border border-cyan-700 hover:bg-cyan-700 hover:bg-opacity-25"
+          class="h-6 w-6 mt-2 p-1 rounded text-accent border border-accent hover:bg-accent hover:bg-opacity-25"
       >
         <PlusIcon/>
       </button>

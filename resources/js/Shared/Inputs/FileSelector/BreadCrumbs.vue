@@ -45,8 +45,8 @@ const pathClasses = (item) => {
     'ml-0.5',
     'hover:cursor-pointer',
     TEXT_SIZES.SM,
-    {'font-light text-primary': activeTab() !== item},
-    {'font-bold text-text': activeTab() === item},
+    {'font-light text-primary dark:text-drk-primary': activeTab() !== item},
+   {'font-bold text-text dark:font-bold dark:text-drk-text': activeTab() === item},
   ];
 }
 
@@ -61,7 +61,7 @@ watch(() => props.pathArray, activeTab, {deep: true});
 </script>
 
 <template>
-  <div :class="['flex', COLORS.BLUE, WEIGHT.BOLD, TEXT_SIZES.MD,'bg-neutral-200','p-1']">
+<div :class="['flex', COLORS.BLUE, WEIGHT.BOLD, TEXT_SIZES.MD, 'bg-primary', 'dark:bg-primary/15', 'p-1']">
     <div @click="back" id="bread-back-arrow" :class="[ICON_SIZES.XS.width, ICON_SIZES.XS.height,'mt-1', 'mr-2','hover:cursor-pointer']">
       <ArrowLeftIcon class="hover:stroke-2 " aria-label="back-arrow"/>
     </div>

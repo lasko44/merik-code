@@ -38,7 +38,7 @@ function generate() {
 </script>
 
 <template>
-  <div class="flex w-full justify-between rounded-t p-2" :class="[COLORS.WHITE, 'bg-gradient-to-r', 'from-cyan-700', 'to-cyan-800',]">
+<div class="flex w-full justify-between rounded-t p-2 bg-accent dark:bg-drk-accent text-text dark:text-drk-text">
     <p  class="mt-2">This field is AI enabled! Click Generate to fill this field</p>
     <button @click="generate" :disabled="btnDisabled" class="flex justify-between border p-2 disabled:bg-neutral-400 disabled:opacity-25 rounded border-neutral-100 enabled:hover:bg-neutral-400 enabled:hover:bg-opacity-25">
       Generate

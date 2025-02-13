@@ -12,6 +12,7 @@ import Label from "@/Shared/Inputs/Label.vue";
 import GeminiGenerator from "@/Shared/Inputs/TextArea/components/GeminiGenerator.vue";
 import Spinner from "@/Shared/Indicators/Spinner.vue";
 import resize from "@/Directives/resize.js";
+
 const props = defineProps({
   value: optionalStringProp,
   label: optionalStringProp,
@@ -26,7 +27,7 @@ const props = defineProps({
   rows: defaultOptionalNumber(6)
 });
 
-const inputClass = ref('rounded-b border-none p-2 w-full shadow-md shadow-neutral-400 outline-none focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2');
+const inputClass = ref('rounded border-none mt-2 p-2 w-full shadow-md dark:shadow-md text-text dark:bg-primary/10 dark:text-drk-text focus:outline-none focus:ring-0 focus:border-2');
 const textValue = ref(null);
 const emit = defineEmits(['update:modelValue'])
 const vResize = resize;
@@ -35,9 +36,9 @@ const showSpinner = ref(false);
 
 watch(() => props.error, (newValue) => {
   if (newValue) {
-    inputClass.value = 'rounded-b p-2 w-full border border-red-600 focus:outline-none focus:ring-0 focus:border-red-600 focus:border-2';
+    inputClass.value = 'rounded-b p-2 w-full border border-red-600 focus:outline-none focus:ring-0 focus:border-red-600 focus:border-2 dark:border-drk-secondary bg-background dark:bg-drk-background';
   } else {
-    inputClass.value = 'rounded-b p-2 w-full shadow-md shadow-neutral-400 focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2';
+    inputClass.value = 'rounded-b p-2 w-full shadow-md shadow-neutral-400 focus:outline-none focus:ring-0 focus:border-cyan-600 focus:border-2 dark:shadow-drk-primary bg-background dark:bg-drk-background';
   }
 });
 
@@ -46,9 +47,10 @@ function updateText(value) {
   textValue.value = value;
   emit('update:modelValue', textValue.value);
 }
-function resized(){
+
+function resized() {
   const textArea = document.getElementById("dynamic-text-area");
-  positionLeft.value = Math.round(textArea.getBoundingClientRect().width/2.25);
+  positionLeft.value = Math.round(textArea.getBoundingClientRect().width / 2.25);
 }
 
 function updateSpinner(value) {
@@ -62,12 +64,14 @@ function updateSpinner(value) {
   <div>
     <div id="dynamic-text-area" v-resize="resized">
       <Label :label="label" :required="required" :for-id="id"/>
-      <GeminiGenerator :payload="payload" @update="updateText" @spinner="updateSpinner" :route-action="aiRoute" v-if="enableAi"/>
-      <textarea :class="inputClass"  :value="textValue" :rows="rows" :id="id"/>
-      <Spinner v-if="showSpinner" :class="['relative','bottom-[250px]', 'mb-[-40px]']" :style="`left: ${positionLeft}px`"/>
+      <GeminiGenerator :payload="payload" @update="updateText" @spinner="updateSpinner" :route-action="aiRoute"
+                       v-if="enableAi"/>
+      <textarea :class="inputClass" :value="textValue" :rows="rows" :id="id"/>
+      <Spinner v-if="showSpinner" :class="['relative','bottom-[250px]', 'mb-[-40px]']"
+               :style="`left: ${positionLeft}px`"/>
     </div>
     <div v-if="error">
-      <p :class="COLORS.RED">{{errorMessage}}</p>
+      <p :class="COLORS.RED">{{ errorMessage }}</p>
     </div>
   </div>
 </template>
