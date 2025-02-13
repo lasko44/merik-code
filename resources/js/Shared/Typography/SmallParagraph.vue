@@ -4,7 +4,6 @@ import { requiredStringProp, themeColorProp } from "@/Shared/Props/common.js";
 
 const props = defineProps({
   content: requiredStringProp,
-  theme: themeColorProp
 });
 
 const classes = SmallParagraph(props.theme);

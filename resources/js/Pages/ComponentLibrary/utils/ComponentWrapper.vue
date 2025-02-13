@@ -11,17 +11,16 @@ defineProps({
 </script>
 
 <template>
-  <div class="w-full">
+  <div class="w-full mt-5">
+    <section class="text-text shadow-md dark:shadow-none dark:text-drk-text bg-background dark:bg-primary dark:bg-opacity-20 dar p-4 rounded dark">
+      <LargeTitle class="text-3xl font-bold" :title="title"/>
+      <div class="mt-2">
+        <SmallParagraph class="text-text dark:text-drk-text" :content="description"/>
+      </div>
+    </section>
     <div class="mt-5">
       <slot>
       </slot>
-    </div>
-    <LargeTitle class="mt-2" :title="title" theme="blue"/>
-    <div class="mt-2">
-      <SmallParagraph :content="description"/>
-    </div>
-    <div class="mt-1 block">
-      <ForwardArrowLink label="Learn More" size="sm" arrow-theme="blue"/>
     </div>
   </div>
 </template>

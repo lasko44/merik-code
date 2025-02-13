@@ -21,7 +21,7 @@ function check(){
 
 <template>
   <div class="flex row">
-    <input class="mt-[5px] rounded focus:ring-0 text-cyan-700" type="checkbox" @input="check">
+<input class="mt-[5px] rounded text-accent bg-primary dark:bg-primary/10" type="checkbox" @input="check">
     <Label class="ml-2" :label="label"/>
   </div>
 

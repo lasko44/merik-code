@@ -1,10 +1,9 @@
 <script setup>
-import {requiredStringProp, themeColorProp} from "@/Shared/Props/common.js";
+import {requiredStringProp} from "@/Shared/Props/common.js";
 
 
 const props = defineProps({
   title: requiredStringProp,
-  theme: themeColorProp
 })
 
 
