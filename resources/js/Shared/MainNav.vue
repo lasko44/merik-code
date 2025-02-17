@@ -8,7 +8,7 @@ defineProps({user: optionalProp})
 </script>
 
 <template>
-  <div class="border-b flex justify-between sticky top-0 min-h-10 z-50 w-full py-5 px-10 bg-background text-text-100">
+  <div class="flex justify-between sticky top-0 min-h-10 z-50 w-full py-5 px-10 bg-drk-secondary dark:bg-secondary text-text">
       <div class="font-bold">
         Here will be a menu
       </div>

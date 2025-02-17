@@ -4,10 +4,12 @@ namespace App\Utilities;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use App\Facades\PropUtil;
 
 class ComponentUtil
 {
     private const PATH = "../resources/js/Shared/";
+
 
     public function getComponentDirectories(array $path = []): array
     {
@@ -23,25 +25,6 @@ class ComponentUtil
     {
 
         return File::get(self::PATH.$path);
-    }
-
-    public function inferVueComponentProps(string $path): array
-    {
-        $contents = self::getComponentContents($path);
-
-        // Match the content inside defineProps({ ... })
-        preg_match('/defineProps\s*\(\s*{(.*?)}\s*\)/s', $contents, $matches);
-
-        if (isset($matches[1])) {
-            $propsContent = $matches[1];
-
-            // Match all property names within the defineProps object
-            preg_match_all('/(\w+)\s*:/', $propsContent, $propMatches);
-
-            return $propMatches[1] ?? [];
-        }
-
-        return [];
     }
 
 

@@ -61,9 +61,9 @@ watch(() => props.pathArray, activeTab, {deep: true});
 </script>
 
 <template>
-<div :class="['flex', COLORS.BLUE, WEIGHT.BOLD, TEXT_SIZES.MD, 'bg-primary', 'dark:bg-primary/15', 'p-1']">
+<div :class="['flex', WEIGHT.BOLD, TEXT_SIZES.MD, 'bg-primary', 'dark:bg-primary/15', 'p-1']">
     <div @click="back" id="bread-back-arrow" :class="[ICON_SIZES.XS.width, ICON_SIZES.XS.height,'mt-1', 'mr-2','hover:cursor-pointer']">
-      <ArrowLeftIcon class="hover:stroke-2 " aria-label="back-arrow"/>
+      <ArrowLeftIcon class="hover:stroke-2 text-accent" aria-label="back-arrow"/>
     </div>
     <div class="ml-3">
       <span :class="pathClasses(home)" id="home-item" @click="crumb(home)">{{ home }}</span>

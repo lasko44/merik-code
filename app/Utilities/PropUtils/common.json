@@ -1,0 +1,54 @@
+{
+  "actionProp": {
+    "type": "Object",
+    "required": false
+  },
+  "defaultEmptyOptionalArrayProp": {
+    "type": "Array",
+    "required": false
+  },
+  "defaultOptionalNumber": {
+    "type": "Number",
+    "required": false
+  },
+  "defaultOptionalArrayProp": {
+    "type": "Array",
+    "required": false
+  },
+  "requiredArrayProp": {
+    "type": "Array",
+    "required": true
+  },
+  "requiredStringProp": {
+    "type": "String",
+    "required": true
+  },
+  "optionalStringProp": {
+    "type": "String",
+    "required": false
+  },
+  "optionalStringDefaultProp": {
+    "type": "String",
+    "required": false
+  },
+  "optionalProp": {
+    "type": null,
+    "required": false
+  },
+  "requiredProp": {
+    "type": null,
+    "required": true
+  },
+  "defaultTrueBoolProp": {
+    "type": "Boolean",
+    "required": false
+  },
+    "defaultFalseBoolProp": {
+        "type": "Boolean",
+        "required": false
+    },
+  "themColorProp": {
+    "type": "String",
+    "required": false
+  }
+}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Components;
 
 use App\Facades\ComponentUtil;
+use App\Facades\PropUtil;
 use App\Http\Controllers\Controller;
 use App\Models\ComponentProps;
 use Illuminate\Http\JsonResponse;
@@ -17,7 +18,7 @@ class ComponentPropsController extends Controller
     {
 
         $componentPath = request()->query('componentPath') ?? null;
-        return response()->json(ComponentUtil::inferVueComponentProps($componentPath));
+        return response()->json(PropUtil::inferVueComponentProps($componentPath));
     }
 
     /**
